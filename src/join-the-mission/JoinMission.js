@@ -4,74 +4,63 @@ import './JoinMission.css';
 export default function JoinMission() {
   return (
     <div className='mission'>
-      <section className='about-mission'>
-        <div className='col-md-8'></div>
-        <div className='col-md-4'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi,
-          deserunt numquam hic cum esse debitis ab suscipit quis neque! Aut
-          assumenda debitis dolorum laboriosam sed voluptas cum ullam
-          accusantium.
-          <button>join now</button>
+      <section className="section">
+        <div className="about-mission">
+          <div className="text">
+            <h1 className="heading">BECOME AN <span className="blue">INTERN </span>AND <span className="blue">LEARN </span>FROM</h1>
+            <p className="para">Experienced teachers, to take your software developement skill to the next level with real life projects.</p>
+            <button className="buttons">Join now </button>
+          </div>
+          <div>
+            <img className="vgg1" src="https://i.ibb.co/PDfd8mb/vgg5.png" alt="vgg5" border="0"/> 
+          </div>
         </div>
       </section>
-      <section className='learningTracks'>
-        <h1>Lorem ipsum dolor sit amet.</h1>
-        <div className='tracks'>
-          <img src='' alt='' />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis at
-            minima alias aliquid quia! Recusandae consequatur laborum aut quod
-            eum odio quibusdam rem. Explicabo, sapiente eius non temporibus
-            fugiat odio!
+
+      <section className="tracks">
+        <div className="tracks-text">
+          <h3 className="track-heading">Available Learning Tracks</h3>
+          <p className="line"></p>
+          <p className="track-para">The Venture Garden Internship is focused on exposing you to real life projects and experienced teachers. In other to prepare and equip
+            you with the right sets of skills for the real world
           </p>
         </div>
-        <div className='tracks'>
-          <img src='' alt='' />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis at
-            minima alias aliquid quia! Recusandae consequatur laborum aut quod
-            eum odio quibusdam rem. Explicabo, sapiente eius non temporibus
-            fugiat odio!
-          </p>
-        </div>
-        <div className='tracks'>
-          <img src='' alt='' />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis at
-            minima alias aliquid quia! Recusandae consequatur laborum aut quod
-            eum odio quibusdam rem. Explicabo, sapiente eius non temporibus
-            fugiat odio!
-          </p>
-        </div>
-        <div className='tracks'>
-          <img src='' alt='' />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis at
-            minima alias aliquid quia! Recusandae consequatur laborum aut quod
-            eum odio quibusdam rem. Explicabo, sapiente eius non temporibus
-            fugiat odio!
-          </p>
+        <div className="card-body">
+          <div className="cardbody">
+            <img className="maths" src="https://i.ibb.co/tLR5kwF/UI.jpg" alt="UI"/>
+            <h3 className="heading-three">UI/UX Design</h3>
+            <p className="paras">The UX/UI Design class is set to prepare and sharpen your skills on real life projects, so you can design great user interfaces and user experience.</p>
+          </div>
+
+          <div className="cardbody">
+            <img className="maths" src="https://i.ibb.co/zJWHFRd/front.jpg" alt="front" border="0"/>
+            <h3 className="heading-three">Frontend</h3>
+            <p className="paras">The UX/UI Design class is set to prepare and sharpen your skills on real life projects, so you can design great UI designs.</p>
+          </div>
+
+          <div className="cardbody">
+            <img className="maths" src="https://i.ibb.co/mhmp0g6/back.jpg" alt="back" border="0"/>
+            <h3 className="heading-three">Backend</h3>
+            <p className="paras">Backend class is set to prepare and sharpen your skills on real life projects,so you can design great products that stand.</p>
+          </div>
+
+          <div className="cardbody">
+            <img className="maths" src="https://i.ibb.co/FBFTXPp/data2.jpg" alt="data2" border="0"/>
+            <h3 className="heading-three">Data Science</h3>
+            <p className="paras">Data Science class is set to prepare and sharpen your skills on real life projects, so you can provide real time data analyses.</p>
+          </div>
+
+
+
+
         </div>
       </section>
-      <section className='interns'>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id quidem
-          obcaecati iste aspernatur vero excepturi, eaque vel molestiae enim
-          eius quis! Ab cumque impedit aspernatur ea expedita voluptates
-          doloribus nihil?
-        </p>
-        <aside>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad provident
-          assumenda iusto dolore consectetur ex.
-        </aside>
-      </section>
-      <section className='getStarted'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est suscipit
-        architecto nulla quae esse necessitatibus adipisci veniam! Optio
-        voluptates vel odit iure placeat quia nisi, non, laudantium eaque enim
-        alias.
-        <button>Join Now</button>
-      </section>
+      
     </div>
   );
 }
+
+
+
+
+
