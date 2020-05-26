@@ -4,18 +4,18 @@
 
 .track{
     background-color:#2992d0;
-     height:45px;
+     height:50px;
      padding:6px 0 0 6px;
      color:white;
 }
 
-.track span, .track small {
-    font-weight: bold;
+.track span { 
+    font-weight:600px;
 }
 
-.bio {
+/* .bio {
     height: 70px
-}
+} */
 
 .follow-icon{
     font-size: 13px;

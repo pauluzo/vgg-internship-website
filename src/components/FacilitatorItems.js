@@ -5,7 +5,7 @@ const FacilitatorItems = ({ facilitator }) => {
   const { name, track, twitter, instagram, image, bio } = facilitator;
 
   return (
-    <div className="card border-0 facilitator-card" style={{ width: "90%" }}>
+    <div className="card facilitator-card" style={{ width: "90%" }}>
       <img
         src={require(`../images/${image}`)}
         height="130"
@@ -19,7 +19,7 @@ const FacilitatorItems = ({ facilitator }) => {
           <span>{name}</span> <br />
           <small>{track}</small>
         </div>
-        <p className="bio">{bio}</p>
+        <p className="card-text bio">{bio}</p>
         <p className="text-center">
           {twitter && (
             <a
