@@ -150,8 +150,7 @@
   align-items: center;
   width: 75%;
   margin: auto;
-  position: relative;
-  height: 500px;
+  min-height: 500px;
 }
 
 .interns .intern-numbers h3 {
@@ -256,33 +255,18 @@
   }
 
   .mission .tracks {
-    background: linear-gradient(45deg, #2992d0, #51b74b) !important;
     width: 100%;
     margin-top: 2rem;
     border-top-width: 10px;
-    /* background-attachment: fixed; */
   }
 
   .mission .tracks .card-body {
     flex-direction: column;
   }
 
-  .mission .tracks .card-body .cardbody {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    height: 60vh;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    margin: 30px 15px;
-  }
-
   .mission .interns {
     flex-direction: column;
     align-items: center;
-    width: 75%;
     margin-bottom: 3rem;
-    position: relative;
-    height: 500px;
   }
 }
