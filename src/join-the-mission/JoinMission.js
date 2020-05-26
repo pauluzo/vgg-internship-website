@@ -35,9 +35,9 @@ export default function JoinMission() {
           <p className='track-para'>
             The Venture Garden Internship is focused on exposing you to real
             life projects and experienced teachers. In other to prepare and
-            equip you with the right sets of skills for the real world
+            equip you with the right sets of skills for the real world.
           </p>
-        </div>
+        </div> 
         <div className='card-body'>
           <div className='cardbody'>
             <img
@@ -99,21 +99,19 @@ export default function JoinMission() {
 
       <section className='interns'>
         <div className='intern-numbers'>
-          <h3>Lorem,</h3>
-          <h4>ipsum</h4>
-          <h3>dolor.</h3>
+          <h3>2000+</h3>
+          <h4>Interns</h4>
+          <h3>Batch A.</h3>
         </div>
 
         <div className='aim'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim
-          quae, provident quaerat saepe minus accusamus inventore tempora
-          consequuntur necessitatibus?
+          We are committed to ensuring all interns are equipped with the right knowledge for real life projects. We train our interns to deliver 
+          the best.
         </div>
       </section>
       <section className='get-started'>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-          recusandae!
+          Sign up today to partake with wide range of intellectual and experienced teachers to take your career to the next level, in software developement!
         </p>
         <button>Join Now</button>
       </section>
