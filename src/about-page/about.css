@@ -72,7 +72,6 @@
    display: flex;
    align-items: center;
    padding: 0;
-   flex-wrap: wrap;
    height: 400px;
    background: rgb(12, 7, 75);
    margin-top: 200px;
@@ -89,7 +88,7 @@
 
 .about__page-info p {
    color: wheat;
-   font-size: 1rem;
+   font-size: 1.1rem;
 }
 
 .about__page-info-left {
