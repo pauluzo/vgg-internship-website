@@ -267,6 +267,24 @@
   .mission .interns {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
   }
+
+  .mission .interns .aim{
+    width: 100%;
+  }
+
+  .mission .get-started {
+    margin-top: 2rem;
+  }
+
+  .mission .get-started p {
+    width: 80%;
+    font-size: 18px;
+  }
+
+  .mission .get-started button {
+    width: 50%;
+  }
+
 }
