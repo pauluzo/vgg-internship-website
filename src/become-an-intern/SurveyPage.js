@@ -1,12 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import Image from "./images/intro-img.png";
+import CloseBtn from "./images/close-icon.png"
+import "./SurveyPage.css";
 
 export default function SurveyPage() {
+  // You'll probably want to delete this, just a placeholder
+  const questionHolder = `
+    Sed ut perspiciatis unde omnis iste natus error sit 
+    voluptatem accusantium doloremque laudantium.
+  `;
+
+  const [question, setQuestion] = useState(questionHolder);
+  // I'm not sure how you'd like to implement this. You can change it.
+  const [options, setOptions] = useState(["Not Quite", "Somewhat", "Very"]);
 
   return(
-    <div>
-      <p>No changes yet. I am testing that the git flow works properly</p>
-      <p>Testing again, that this works well. Nothing special here</p>
-      <p>Final git flow testing</p>
+    <div className="survey-page-container" >
+      <div className="survey-page-body">
+        
+        <div className="survey-intro">
+          <div className="intro-layer">
+            <div className="intro-container">
+              <div className="img-container">
+                <div>
+                  <img alt="vgg-img" src={Image}></img>
+                </div>
+              </div>
+              <div className="intro-text">
+                <div className="close-btn">
+                  <img alt="close-btn" src={CloseBtn} />
+                </div>
+                <span className="span-1">Survey</span>
+                <span className="span-2">Questionnaire</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="survey-question">
+          <div className="question-container">
+            <div className="question">{question}</div>
+            <div className="button-container">
+              <button className="option-btn" onClick={() => {}}>{options[0]}</button>
+              <button className="option-btn" onClick={() => {}}>{options[1]}</button>
+              <button className="option-btn" onClick={() => {}}>{options[2]}</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
