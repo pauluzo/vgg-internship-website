@@ -98,6 +98,12 @@
   justify-content: space-between;
 }
 
+.question {
+  font-size: 17px;
+  max-width: 300px;
+  font-family: cursive;
+}
+
 .button-container {
   width: 250px;
   height: 50%;

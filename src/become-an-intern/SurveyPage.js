@@ -24,7 +24,9 @@ export default function SurveyPage() {
           <div className="intro-layer">
             <div className="intro-container">
               <div className="img-container">
-                <img alt="vgg-img" src={Image}></img>
+                <div>
+                  <img alt="vgg-img" src={Image}></img>
+                </div>
               </div>
               <div className="intro-text">
                 <span className="span-1">Survey</span>
@@ -35,7 +37,7 @@ export default function SurveyPage() {
         </div>
         <div className="survey-question">
           <div className="question-container">
-            <div style={{maxWidth: "300px"}}>{question}</div>
+            <div className="question">{question}</div>
             <div className="button-container">
               <button className="option-btn" onClick={() => {}}>{options[0]}</button>
               <button className="option-btn" onClick={() => {}}>{options[1]}</button>
