@@ -22,7 +22,7 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "gainsboro"}}>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
       <Container style={{ margin: "20px"}}>
       <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px"}}>
         <Card.Img
@@ -48,6 +48,7 @@ export const RegistrationForm = () => {
         onSubmit={handleSubmit}
         onChange={handleChange}
         className="align-middle"
+        style={{ color: "white" }}
       >
         <Form.Row>
           <Form.Group as={Col} md="6" controlId="firstNameValidation">
@@ -76,7 +77,7 @@ export const RegistrationForm = () => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="6" controlId="emailValidation">
+          <Form.Group as={Col} md="6" controlId="emailValidation" >
             <Form.Label>
               Email
               <span style={{ color: "red" }}> *</span>
