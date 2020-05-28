@@ -340,26 +340,25 @@ const givePoints = (questionIndex, Value) => {
     });
 }
 return (
-    <div className="mt-5">
+    <div className="question-container">
         {
             showScore? 
-            <div>Based on your survey result, We Advise that you go for <span style={{fontWeight: "bolder", color: "red"}}>{firstChoice}</span>, or pick the second option of <span style={{fontWeight: "bolder", color: "red"}}>{secondChoice}</span></div> 
+            <div className="question">Based on your survey result, We Advise that you go for <span style={{fontWeight: "bolder", color: "red"}}>{firstChoice}</span>, or pick the second option of <span style={{fontWeight: "bolder", color: "red"}}>{secondChoice}</span></div> 
             : 
             <div>
                 <div>
                     Instruction: You can only answer once!!! Be sure to pick the right answer.
                 </div>
-                <div>
+                <div className="question">
                     {questionText}
                 </div>
-                <div>
-                    <button type="button" value={firstButton} onClick={handleClick}>{firstButton}</button>
-                    <button type="button" value={secondButton} onClick={handleClick}>{secondButton}</button>
-                    <button type="button" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+                <div className="button-container">
+                    <button type="button" className="option-btn" value={firstButton} onClick={handleClick}>{firstButton}</button>
+                    <button type="button" className="option-btn" value={secondButton} onClick={handleClick}>{secondButton}</button>
+                    <button type="button" className="option-btn" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
                 </div>
         </div>
         }
-        
     </div>
 )
 }
