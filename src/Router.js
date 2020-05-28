@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import JoinMission from './join-the-mission/JoinMission';
+import SurveyPage from './become-an-intern/SurveyPage';
 export class Router extends Component {
   render() {
     return (
       <>
-        <Route component={JoinMission} path='/mission' />
+        <Route component={SurveyPage} path='/' />
       </>
     );
   }
