@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
-import SurveyQuestions from "./surveyquestions"
 
 export default function SurveyPage() {
-  // You'll probably want to delete this, just a placeholder
   const questions = [
     {
       question: "What Interests you the most in an application?",
