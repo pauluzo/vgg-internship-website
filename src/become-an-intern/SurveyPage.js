@@ -17,9 +17,7 @@ export default function SurveyPage() {
   return(
     <div className="survey-page-container" >
       <div className="survey-page-body">
-        <div className="close-btn">
-          <img alt="close-btn" src={CloseBtn} />
-        </div>
+        
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container">
@@ -29,6 +27,9 @@ export default function SurveyPage() {
                 </div>
               </div>
               <div className="intro-text">
+                <div className="close-btn">
+                  <img alt="close-btn" src={CloseBtn} />
+                </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>
               </div>
