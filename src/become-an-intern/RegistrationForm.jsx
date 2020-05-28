@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Col, Button, Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const RegisterationForm = () => {
+export const RegistrationForm = () => {
   const [validated, setValidated] = useState(false);
   const [data, setData] = useState();
 
@@ -22,26 +22,24 @@ export const RegisterationForm = () => {
   };
 
   return (
-    <Container>
-      <Card style={{ marginBottom: "10px", marginTop: "3px" }}>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "gainsboro"}}>
+      <Container style={{ margin: "20px"}}>
+      <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px"}}>
         <Card.Img
           variant="top"
           src="https://c.smartrecruiters.com/sr-company-logo-prod-dc5/5b030101e4b0cb0b1794200c/huge?r=s3-eu-central-1&_1526923666148"
-          style={{ backgroundColor: "", height: "100px", width: "100%" }}
+          style={{ backgroundColor: "", height: "200px", width: "80%", marginRight: "auto", marginLeft: "auto" }}
         />
-        <Card.Body>
-          <Card.Title style={{ color: "#50b64a" }}>
-            Join as an Intern
+        <Card.Title style={{ fontSize: "35px", fontWeight: "bolder", color: "#50b64a" }}>
+            BECOME AN INTERN
           </Card.Title>
           <Card.Text>
-            Complete the form below to begin your journey as an Intern.
-            <br />
-            Not sure what track to choose? Take this<Link to="/"> survey.</Link>
+           <span><em>Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link></em></span>
             <br />
             <br />
-            <span style={{ color: "red" }}>*Required</span>
-          </Card.Text>
-        </Card.Body>
+            All fields are <span style={{ color: "red" }}>*Required</span>
+            <br />
+        </Card.Text>
       </Card>
 
       <Form
@@ -204,8 +202,9 @@ export const RegisterationForm = () => {
             </Form.Control.Feedback>
           </Form.Group>
         </Form.Row>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" style={{padding: "5px", width: "100%", fontSize: "23px"}}>Submit</Button>
       </Form>
     </Container>
+    </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
+import { Link } from "react-router-dom";
 
 export default function SurveyPage() {
   const questions = [
@@ -286,8 +287,8 @@ const givePoints = (questionIndex, Value) => {
                 </div>
               </div>
               <div className="intro-text">
-                <div className="close-btn">
-                  <img alt="close-btn" src={CloseBtn} />
+                <div className="close-btn" style={{marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
+                  <span  className="close-text" style={{color: "#228B22"}}>CLOSE </span><Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
                 </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>

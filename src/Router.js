@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import SurveyPage from './become-an-intern/SurveyPage';
-import { RegisterationForm } from './become-an-intern/RegisterationForm';
+import { RegistrationForm } from './become-an-intern/RegistrationForm';
 
 export class Router extends Component {
   render() {
     return (
       <>
-        <Route component={RegisterationForm} path='/registeration-form' />
-        <Route component={SurveyPage} path='/' />
+        <Route component={RegistrationForm} path='/registration-form' />
+        <Route component={SurveyPage} path='/take-a-survey' />
       </>
     );
   }

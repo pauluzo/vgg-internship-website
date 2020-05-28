@@ -22,6 +22,10 @@
   top: 30px;
 }
 
+.close-text:hover {
+  text-decoration: none;
+}
+
 .survey-intro {
   width: 50%;
   height: 100%;
