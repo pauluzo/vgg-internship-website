@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import JoinMission from './join-the-mission/JoinMission';
+import { RegisterationForm } from './become-an-intern/RegisterationForm';
 export class Router extends Component {
   render() {
     return (
       <>
-        <Route component={JoinMission} path='/mission' />
+        <Route component={RegisterationForm} path='/registeration-form' />
       </>
     );
   }
