@@ -1,16 +1,34 @@
 import React, { useState } from "react";
 import { Form, Col, Button, Container, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
+import Axios from 'axios'
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts'
 
 export const RegistrationForm = () => {
   const [validated, setValidated] = useState(false);
   const [data, setData] = useState();
+  const [redirect, setRedirect] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
+  const handlePost = () => {
+    Axios.post("https://vgg-interns-api.herokuapp.com/api/register", { ...data })
+    .then(res => {
+      ToastsStore.success(res.data.message)
+      setRedirect(true)
+    })
+    .catch(err => {
+      const { message } = err.response.data;
+     if(typeof(message)=="object"){
+     message.map(item => ToastsStore.error(item.msg))
+     } else {
+      ToastsStore.error(message)
+     }
+     })
+  }
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
@@ -19,10 +37,19 @@ export const RegistrationForm = () => {
     }
 
     setValidated(true);
-  };
+    handlePost();
+  }
+
+  const renderRedirect = () => {
+    if (redirect) {
+        return <Redirect to='./'/>
+    }
+  }
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
+    <div style={{backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
+      {renderRedirect()}
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore}/>
       <Container style={{ margin: "20px"}}>
       <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px"}}>
         <Card.Img
@@ -41,7 +68,7 @@ export const RegistrationForm = () => {
             <br />
         </Card.Text>
       </Card>
-
+      
       <Form
         noValidate
         validated={validated}

@@ -3,213 +3,10 @@ import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
 import { Link } from "react-router-dom";
+import { Questions } from './surveyquestions'
 
 export default function SurveyPage() {
-  const questions = [
-    {
-      question: "What Interests you the most in an application?",
-      answers: [
-        {
-          answer: "Aesthetics",
-          point: 2,
-          track: ["frontend", "uiux"],
-        },
-        {
-          answer: "Structure",
-          point: 2,
-          track: ["backend"],
-        },
-        {
-          answer: "Both",
-          point: 2,
-          track: ["qa"],
-        },
-      ],
-    },
-    {
-      question: "How good are you with colors?",
-      answers: [
-        {
-          answer: "Not quite",
-          point: 0,
-          track: ["backend"],
-        },
-        {
-          answer: "Somewhat",
-          point: 1,
-          track: ["frontend"],
-        },
-        {
-          answer: "Very",
-          point: 2,
-          track: ["uiux", "qa"],
-        },
-      ],
-    },
-    {
-      question:
-        "When surfing the internet, are you often concerned about the look and feel of a website?",
-      answers: [
-        {
-          answer: "Look",
-          point: 2,
-          track: ["uiux"],
-        },
-        {
-          answer: "Feel",
-          point: 2,
-          track: ["frontend", "backend"],
-        },
-        {
-          answer: "Both",
-          point: 2,
-          track: ["qa"],
-        },
-      ],
-    },
-    {
-      question:
-        "Do you find yourself suggesting easier ways to make a website more performant?",
-      answers: [
-        {
-          answer: "Yes",
-          point: 2,
-          track: ["frontend", "qa"],
-        },
-        {
-          answer: "No",
-          point: 0,
-          track: ["uiux"],
-        },
-        {
-          answer: "I don't know",
-          point: 0,
-          track: ["backend"],
-        },
-      ],
-    },
-    {
-      question: "How enthusiastic are you about software architecture?",
-      answers: [
-        {
-          answer: "Not quite",
-          point: 0,
-          track: ["qa", "uiux"],
-        },
-        {
-          answer: "Somewhat",
-          point: 1,
-          track: ["frontend"],
-        },
-        {
-          answer: "Very",
-          point: 2,
-          track: ["backend"],
-        },
-      ],
-    },
-    {
-      question:
-        "Would you rather play a game that tests your analytical skills or your design skills?",
-      answers: [
-        {
-          answer: "Design",
-          point: 2,
-          track: ["uiux"],
-        },
-        {
-          answer: "Analytical",
-          point: 2,
-          track: ["backend"],
-        },
-        {
-          answer: "Both",
-          point: 2,
-          track: ["frontend", "qa", "uiux", "backend"],
-        },
-      ],
-    },
-    {
-      question: "How good are you with spotting layout errors?",
-      answers: [
-        {
-          answer: "Not quite",
-          point: 0,
-          track: ["backend"],
-        },
-        {
-          answer: "Somewhat",
-          point: 1,
-          track: ["backend"],
-        },
-        {
-          answer: "Very",
-          point: 2,
-          track: ["qa", "frontend", "uiux"],
-        },
-      ],
-    },
-    {
-      question: "How good are you with spotting functionality errors?",
-      answers: [
-        {
-          answer: "Not quite",
-          point: 0,
-          track: ["uiux"],
-        },
-        {
-          answer: "Somewhat",
-          point: 1,
-          track: ["frontend", "backend"],
-        },
-        {
-          answer: "Very",
-          point: 2,
-          track: ["qa", "backend"],
-        },
-      ],
-    },
-    {
-      question: "How attentive are you to details?",
-      answers: [
-        {
-          answer: "Not quite",
-          point: 0,
-          track: ["frontend", "uiux", "backend"],
-        },
-        {
-          answer: "Somewhat",
-          point: 1,
-          track: ["frontend", "uiux", "backend"],
-        },
-        {
-          answer: "Very",
-          point: 2,
-          track: ["qa"],
-        },
-      ],
-    },
-    {
-      question: "Are you very good with writing reports and handling feedback?",
-      answers: [
-        {
-          answer: "Yes",
-          point: 2,
-          track: ["qa"],
-        },
-        {
-          answer: "No",
-          point: 0,
-          track: ["uiux"],
-        },
-        {
-          answer: "I don't Know",
-          point: 0,
-          track: [],
-        },
-      ],
-    },
-  ]
+const Point = 2
 const [firstChoice, setFirstChoice] = useState("")
 const [secondChoice, setSecondChoice] = useState("")
 const [frontend, setFrontend] = useState(0)
@@ -220,7 +17,7 @@ const [point, setPoint] = useState(0)
 
 const [showScore, setShowScore] = useState(false)
 const [questionIndex, setquestionIndex] = useState(0) 
-let currentQuestion = questions[questionIndex]
+let currentQuestion = Questions[questionIndex]
 let currentAnswers = currentQuestion.answers
 let questionText = currentQuestion.question
 let firstButton = currentAnswers[0].answer
@@ -230,7 +27,7 @@ let thirdButton = currentAnswers[2].answer
 const handleClick = (event) => {
     const Value = event.target.value
     givePoints(questionIndex, Value)
-    if (questionIndex < questions.length - 1) {
+    if (questionIndex < Questions.length - 1) {
         setquestionIndex(prevIndex => prevIndex + 1)
     } else {
         setShowScore(true)
@@ -258,16 +55,15 @@ const getSecondChoice = (arr, Labels) => {
 }
 
 const givePoints = (questionIndex, Value) => {
-    const answers = questions[questionIndex].answers
+    const answers = Questions[questionIndex].answers
     answers.forEach(Answer => {
-        const point = Answer.point
         if (Value === Answer.answer) {
             const trackList = Answer.track
             trackList.forEach(track => {
-                track === "frontend" ? setFrontend(prevScore => prevScore + point) :
-                track === "backend" ? setBackend(prevScore => prevScore + point) :
-                track === "uiux" ? setUiux(prevScore => prevScore + point) :
-                track === "qa" ? setQa(prevScore => prevScore + point) :
+                track === "frontend" ? setFrontend(prevScore => prevScore + Point) :
+                track === "backend" ? setBackend(prevScore => prevScore + Point) :
+                track === "uiux" ? setUiux(prevScore => prevScore + Point) :
+                track === "qa" ? setQa(prevScore => prevScore + Point) :
                 setPoint(prevScore => prevScore + 0)
             });
         }
