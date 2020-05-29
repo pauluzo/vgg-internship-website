@@ -84,7 +84,7 @@ const givePoints = (questionIndex, Value) => {
               </div>
               <div className="intro-text">
                 <div className="close-btn" style={{marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
-                  <span  className="close-text" style={{color: "#228B22"}}>CLOSE </span><Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
+                  <Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
                 </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>
@@ -105,7 +105,7 @@ const givePoints = (questionIndex, Value) => {
           </div>
           : 
           <div className="question-container">
-            <div className="px-2">
+            <div className="px-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
             <div className="question">{questionText}</div>

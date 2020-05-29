@@ -52,24 +52,21 @@ export const RegistrationForm = () => {
       {renderRedirect()}
       <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore}/>
       <Container style={{ margin: "20px"}}>
-      <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px"}}>
+      <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px",}}>
         <Card.Img
           variant="top"
           src={Image}
           /*check the background color to change the shade*/
           style={{ backgroundColor: "#0B2B26", height: "auto", width: "100%"}}
         />
-        
-        <Card.Title style={{ fontSize: "35px", fontWeight: "bolder", color: "#50b64a" }}>
-            BECOME AN INTERN
-          </Card.Title>
-          <Card.Text>
-           <span><em>Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link></em></span>
-            <br />
-            <br />
-            All fields are <span style={{ color: "red" }}>*Required</span>
-            <br />
-        </Card.Text>
+        <Card.Body>
+          <Card.Title style={{ textAlign: "center", fontSize: "35px", fontWeight: "bold", color: "#50b64a" }}>
+              BECOME AN INTERN
+            </Card.Title>
+            <Card.Text>
+            Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link>
+          </Card.Text>
+        </Card.Body>
       </Card>
       
       <Form
