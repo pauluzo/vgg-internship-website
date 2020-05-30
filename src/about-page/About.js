@@ -1,5 +1,7 @@
 import React from 'react';
 import './about.css';
+import Feature from './Feature';
+import crowd from './crowd-of-users.svg';
 
 const About = () => {
   return (
@@ -22,6 +24,34 @@ const About = () => {
           </p>
         </div>
         <div className="about__page-info-right">
+        </div>
+      </div>
+      <div className="container">
+        <div className="about__page-internship">
+          <div className="text-center">
+            <h3 className="text-vgg-blue">How the Internship works</h3>
+            <p>We combine technology with a well proven education system of learning to mentor interns and help them grow which in turn advances the ecosystem.</p>
+          </div>
+          <div className="row mt-5">
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-6">
+              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
