@@ -6,10 +6,9 @@ import About from './about-page/About';
 
 function App() {
   return (
-    // <Route>
-    //   <Router />
-    // </Route>
-    <About />
+    <Route>
+      <Router />
+    </Route>
   );
 }
 
