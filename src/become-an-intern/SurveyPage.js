@@ -13,7 +13,6 @@ const [frontend, setFrontend] = useState(0)
 const [backend, setBackend] = useState(0)
 const [uiux, setUiux] = useState(0)
 const [qa, setQa] = useState(0)
-const [point, setPoint] = useState(0)
 
 const [showScore, setShowScore] = useState(false)
 const [questionIndex, setquestionIndex] = useState(0) 
@@ -63,8 +62,7 @@ const givePoints = (questionIndex, Value) => {
                 track === "frontend" ? setFrontend(prevScore => prevScore + Point) :
                 track === "backend" ? setBackend(prevScore => prevScore + Point) :
                 track === "uiux" ? setUiux(prevScore => prevScore + Point) :
-                track === "qa" ? setQa(prevScore => prevScore + Point) :
-                setPoint(prevScore => prevScore + 0)
+                setQa(prevScore => prevScore + Point);
             });
         }
     });
