@@ -15,7 +15,7 @@ export default function JoinMission() {
               Experienced teachers, to take your software developement skill to
               the next level with real life projects.
             </p>
-            <button>Join now </button>
+            <a style={{color: "inherit"}} href="/registration-form"><button>Join now</button></a>
           </div>
           <div>
             <img
@@ -47,8 +47,8 @@ export default function JoinMission() {
             />
             <h3 className='heading-three'>UI/UX Design</h3>
             <p className='paras'>
-              The UX/UI Design class is set to prepare and sharpen your skills
-              on real life projects, so you can design great user interfaces and
+              The UX/UI Design track is set to prepare you and sharpen your skills
+              in designing real life projects, so you can showcase great user interfaces and
               user experience.
             </p>
           </div>
@@ -62,8 +62,9 @@ export default function JoinMission() {
             />
             <h3 className='heading-three'>Frontend</h3>
             <p className='paras'>
-              The UX/UI Design class is set to prepare and sharpen your skills
-              on real life projects, so you can design great UI designs.
+              The Frontend track is set to prepare you and sharpen your skills in 
+              implementing designs and building robust applications, that work
+              seamlessly.
             </p>
           </div>
 
@@ -76,8 +77,9 @@ export default function JoinMission() {
             />
             <h3 className='heading-three'>Backend</h3>
             <p className='paras'>
-              Backend class is set to prepare and sharpen your skills on real
-              life projects,so you can design great products that stand.
+              Backend track is set to prepare you and sharpen your skills in 
+              software architecture, so you can design great products that 
+              stand through time.
             </p>
           </div>
 
@@ -88,10 +90,10 @@ export default function JoinMission() {
               alt='data2'
               border='0'
             />
-            <h3 className='heading-three'>Data Science</h3>
+            <h3 className='heading-three'>Quality Assurance</h3>
             <p className='paras'>
-              Data Science class is set to prepare and sharpen your skills on
-              real life projects, so you can provide real time data analyses.
+              Quality Assurance track is set to help you understand the importance
+              of quality software products and how to ensure they meet the best standards.
             </p>
           </div>
         </div>
@@ -99,7 +101,7 @@ export default function JoinMission() {
 
       <section className='interns'>
         <div className='intern-numbers'>
-          <h3>2000+</h3>
+          <h3>1000+</h3>
           <h4>Interns</h4>
           <h3>Batch A.</h3>
         </div>
@@ -111,9 +113,9 @@ export default function JoinMission() {
       </section>
       <section className='get-started'>
         <p>
-          Sign up today to partake with wide range of intellectual and experienced teachers to take your career to the next level, in software developement!
+          Sign up today to join this community with a wide range of experienced tutors to take your career in software developement to the next level!
         </p>
-        <button>Join Now</button>
+        <a style={{color: "inherit", width: "20%"}} href="/registration-form"><button>Join now</button></a>
       </section>
     </div>
   );
