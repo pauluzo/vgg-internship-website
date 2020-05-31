@@ -107,6 +107,29 @@
   height: 100%;
 }
 
+.about__page-internship h3 {
+   font-size: 35px;
+   line-height: 39px;
+}
+.about__page-internship p {
+   font-size: 23px;
+   line-height: 30px;
+   font-weight: 300;
+   color: #013042;
+   margin-top: 10px;
+}
+.text-vgg-blue {
+   color: #2992d0 !important;
+}
+.feature-box {
+   background: #67c1ee;
+   padding: 2rem;
+   margin-top: 1rem;
+}
+.feature-box p {
+   color: #fff;
+}
+
 @media (max-width: 1160px) {
   .about__page-hero {
     flex-direction: column;
