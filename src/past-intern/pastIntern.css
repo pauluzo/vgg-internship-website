@@ -1,0 +1,15 @@
+.text-aqua{
+ color: rgb(14, 129, 150);
+}
+.bg-aqua{
+ background-color: rgb(14, 129, 150);
+ margin-top: 30px !important;
+}
+
+.padding{
+    margin-top: 20px !important;
+}
+
+.past-intern {
+    color: rgb(14, 129, 150);
+}
