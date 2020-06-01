@@ -62,7 +62,7 @@ const givePoints = (questionIndex, Value) => {
                 track === "frontend" ? setFrontend(prevScore => prevScore + Point) :
                 track === "backend" ? setBackend(prevScore => prevScore + Point) :
                 track === "uiux" ? setUiux(prevScore => prevScore + Point) :
-                setQa(prevScore => prevScore + Point);
+                setQa(prevScore => prevScore + Point)
             });
         }
     });
@@ -73,7 +73,7 @@ const goBack = () => {
   if(history) history.goBack();
 }
 
-  return(
+return(
     <div className="survey-page-container" >
       <div className="survey-page-body">
         
