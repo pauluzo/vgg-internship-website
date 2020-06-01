@@ -3,6 +3,7 @@ import { Form, Col, Button, Container, Card } from "react-bootstrap";
 import { Redirect, Link } from "react-router-dom";
 import Axios from 'axios'
 import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts'
+import Image from "./images/intro-img.png"
 
 export const RegistrationForm = () => {
   const [validated, setValidated] = useState(false);
@@ -47,26 +48,25 @@ export const RegistrationForm = () => {
   }
 
   return (
-    <div style={{backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
       {renderRedirect()}
       <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore}/>
       <Container style={{ margin: "20px"}}>
-      <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px"}}>
+      <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px",}}>
         <Card.Img
           variant="top"
-          src="https://c.smartrecruiters.com/sr-company-logo-prod-dc5/5b030101e4b0cb0b1794200c/huge?r=s3-eu-central-1&_1526923666148"
-          style={{ backgroundColor: "", height: "200px", width: "80%", marginRight: "auto", marginLeft: "auto" }}
+          src={Image}
+          /*check the background color to change the shade*/
+          style={{ backgroundColor: "#0B2B26", height: "auto", width: "100%"}}
         />
-        <Card.Title style={{ fontSize: "35px", fontWeight: "bolder", color: "#50b64a" }}>
-            BECOME AN INTERN
-          </Card.Title>
-          <Card.Text>
-           <span><em>Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link></em></span>
-            <br />
-            <br />
-            All fields are <span style={{ color: "red" }}>*Required</span>
-            <br />
-        </Card.Text>
+        <Card.Body>
+          <Card.Title style={{ textAlign: "center", fontSize: "35px", fontWeight: "bold", color: "#50b64a" }}>
+              BECOME AN INTERN
+            </Card.Title>
+            <Card.Text>
+            Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link>
+          </Card.Text>
+        </Card.Body>
       </Card>
       
       <Form

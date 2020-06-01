@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
 
-export default function SurveyPage() {
+function SurveyPage(props) {
 const Point = 2
 const [firstChoice, setFirstChoice] = useState("")
 const [secondChoice, setSecondChoice] = useState("")
@@ -13,7 +13,6 @@ const [frontend, setFrontend] = useState(0)
 const [backend, setBackend] = useState(0)
 const [uiux, setUiux] = useState(0)
 const [qa, setQa] = useState(0)
-const [point, setPoint] = useState(0)
 
 const [showScore, setShowScore] = useState(false)
 const [questionIndex, setquestionIndex] = useState(0) 
@@ -63,11 +62,15 @@ const givePoints = (questionIndex, Value) => {
                 track === "frontend" ? setFrontend(prevScore => prevScore + Point) :
                 track === "backend" ? setBackend(prevScore => prevScore + Point) :
                 track === "uiux" ? setUiux(prevScore => prevScore + Point) :
-                track === "qa" ? setQa(prevScore => prevScore + Point) :
-                setPoint(prevScore => prevScore + 0)
+                setQa(prevScore => prevScore + Point);
             });
         }
     });
+}
+
+const goBack = () => {
+  const {history} = props;
+  if(history) history.goBack();
 }
 
   return(
@@ -83,8 +86,8 @@ const givePoints = (questionIndex, Value) => {
                 </div>
               </div>
               <div className="intro-text">
-                <div className="close-btn" style={{marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
-                  <span  className="close-text" style={{color: "#228B22"}}>CLOSE </span><Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
+                <div onClick={goBack} className="close-btn" style={{cursor: "pointer", marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
+                  <img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/>
                 </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>
@@ -105,7 +108,7 @@ const givePoints = (questionIndex, Value) => {
           </div>
           : 
           <div className="question-container">
-            <div className="px-2">
+            <div className="px-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
             <div className="question">{questionText}</div>
@@ -120,3 +123,5 @@ const givePoints = (questionIndex, Value) => {
     </div>
   );
 }
+
+export default withRouter(SurveyPage);
