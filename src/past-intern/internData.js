@@ -7,9 +7,9 @@ export const internData = [{
     },
     {
         id: 2,
-        name: "Robertito1 orazu",
+        name: "Robert Orazu",
         track : "Frontend Developer",
-        image_url:"",
+        image_url:"https://res.cloudinary.com/dwh9qmkfa/image/upload/v1590918334/videos/Robert_Orazu.259434_k5joqv.jpg",
         Description: "venture garden group(past intern)"
     },
     {
