@@ -14,7 +14,7 @@ export class Router extends Component {
         <Route component={JoinMission} path='/join-the-mission' />
         <Route component={Facilitators} path="/facilitators" />
       </>
-    );
+    )
   }
 }
 
