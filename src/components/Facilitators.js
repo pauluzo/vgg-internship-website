@@ -1,260 +1,253 @@
 import React from "react";
 import FacilitatorItems from "./FacilitatorItems";
 import "./facilitatorStyle.css";
+import Mario from '../images/Mario.jpg'
+
 
 
 const Facilitators = () => {
   const facilitatorDetails = [
     {
       id: 1,
-      name: "Mario Michael",
-      track: "Community Manager",
-      twitter: "Positive_Mario",
-      instagram: "Positive_Mario",
-      image: "Mario.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Vincent Olajide",
+      track: "Programme Coordinator",
+      twitter: "sunskyuk",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 2,
-      name: "Vincent Olajide",
-      track: "Programme Coordinator",
-      twitter: "sunskyuk",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Precious Uchendu",
+      track: "Frontend Developer",
+      twitter: "allindeveloper",
+      github: "",
+      image: "Precious.jpg"
     },
 
     {
       id: 3,
-      name: "Precious Uchendu",
+      name: "Olatokunbo Ogunlade",
       track: "Frontend Developer",
-      twitter: "allindeveloper",
-      instagram: "",
-      image: "Precious.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "OgunladeTokunbo",
+      github: "",
+      image: "Ogunlade.jpg"
     },
 
     {
       id: 4,
-      name: "Olatokunbo Ogunlade",
+      name: "Tunde Ojediran",
       track: "Frontend Developer",
-      twitter: "OgunladeTokunbo",
-      instagram: "",
-      image: "Ogunlade.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "danieltundeoje",
+      github: "tundeojediran",
+      image: "Tunde.jpg"
     },
 
     {
       id: 5,
-      name: "Tunde Ojediran",
-      track: "Frontend Developer",
-      twitter: "danieltundeoje",
-      instagram: "tundeojediran",
-      image: "Tunde.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "John Stephen",
+      track: "Backend Developer(Java)",
+      twitter: "progsteve",
+      github: "progsteve",
+      image: "Progsteve.jpg"
     },
 
     {
       id: 6,
-      name: "John Stephen",
+      name: "Azeezat Raheem",
       track: "Backend Developer(Java)",
-      twitter: "progsteve",
-      instagram: "progsteve",
-      image: "Progsteve.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "TheCodingHijabi",
+      github: "TheCodingHijabi",
+      image: "profile.jpg"
     },
 
     {
       id: 7,
-      name: "Azeezat Raheem",
-      track: "Backend Developer(Java)",
-      twitter: "TheCodingHijabi",
-      instagram: "TheCodingHijabi",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Theophilus Ighalo",
+      track: "Backend Developer(Python)",
+      twitter: "",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 8,
-      name: "Theophilus Ighalo",
+      name: "Chidi Onyeachonam",
       track: "Backend Developer(Python)",
       twitter: "",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 9,
-      name: "Chidi Onyeachonam",
-      track: "Backend Developer(Python)",
-      twitter: "",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Daniel Ogwu",
+      track: "Backend Developer(C#)",
+      twitter: "danhero3",
+      github: "ddanhero",
+      image: "Ogwu.jpg"
     },
 
     {
       id: 10,
-      name: "Daniel Ogwu",
+      name: "Collins Nwaogugu",
       track: "Backend Developer(C#)",
-      twitter: "danhero3",
-      instagram: "ddanhero",
-      image: "Ogwu.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 11,
-      name: "Collins Nwaogugu",
+      name: "Ikechukwu konweh",
       track: "Backend Developer(C#)",
       twitter: "",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 12,
-      name: "Ikechukwu konweh",
-      track: "Backend Developer(C#)",
+      name: "Azeezat Asimolowo",
+      track: "Software Quality Assurance",
       twitter: "",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      github: "unqazdam",
+      image: "Azeezat.jpg"
     },
 
     {
       id: 13,
-      name: "Azeezat Asimolowo",
+      name: "Segun Abdrauf",
       track: "Software Quality Assurance",
-      twitter: "",
-      instagram: "unqazdam",
-      image: "Azeezat.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "realshegmovic",
+      github: "realshegmovic",
+      image: "segun.jpg"
     },
 
     {
       id: 14,
-      name: "Segun Abdrauf",
-      track: "Software Quality Assurance",
-      twitter: "realshegmovic",
-      instagram: "realshegmovic",
-      image: "segun.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Promise Chukwuenyem",
+      track: "DEVOPS Engineer",
+      twitter: "PromisePreston",
+      github: "PromisePreston",
+      image: "Promise.jpg"
     },
 
     {
       id: 15,
-      name: "Promise Chukwuenyem",
+      name: "Onyinye Uce",
       track: "DEVOPS Engineer",
-      twitter: "PromisePreston",
-      instagram: "PromisePreston",
-      image: "Promise.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "sylon23",
+      github: "",
+      image: "Sylon.jpg"
     },
 
     {
       id: 16,
-      name: "Onyinye Uce",
+      name: "Olakunle Abiola",
       track: "DEVOPS Engineer",
-      twitter: "sylon23",
-      instagram: "",
-      image: "Sylon.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "mr_kyen",
+      github: "mr_kyen",
+      image: "Olakunle.jpg"
     },
 
     {
       id: 17,
-      name: "Olakunle Abiola",
-      track: "DEVOPS Engineer",
-      twitter: "mr_kyen",
-      instagram: "mr_kyen",
-      image: "Olakunle.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      name: "Samuel Fabayo",
+      track: "Visual And User Experience Designer",
+      twitter: "amstillfabz",
+      github: "amstillfabz",
+      image: "Samuel.jpg"
     },
 
     {
       id: 18,
-      name: "Samuel Fabayo",
+      name: "Wolede Adeniyi",
       track: "Visual And User Experience Designer",
-      twitter: "amstillfabz",
-      instagram: "amstillfabz",
-      image: "Samuel.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "oluwawolede",
+      github: "wolede",
+      image: "wolede.jpg"
     },
 
     {
       id: 19,
-      name: "Wolede Adeniyi",
+      name: "Nma Okafor",
       track: "Visual And User Experience Designer",
-      twitter: "oluwawolede",
-      instagram: "wolede",
-      image: "wolede.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "nmaokafor",
+      github: "nmaokafor_",
+      image: "nma.jpg"
     },
 
     {
       id: 20,
-      name: "Nma Okafor",
+      name: "Ameen Alade",
       track: "Visual And User Experience Designer",
-      twitter: "nmaokafor",
-      instagram: "nmaokafor_",
-      image: "nma.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      twitter: "",
+      github: "",
+      image: "profile.jpg"
     },
 
     {
       id: 21,
-      name: "Ameen Alade",
-      track: "Visual And User Experience Designer",
-      twitter: "",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
-    },
-
-    {
-      id: 22,
       name: "Fisayo Watti",
       track: "Visual And User Experience Designer",
       twitter: "wells_inpixels",
-      instagram: "",
-      image: "profile.jpg",
-      bio:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nisi, deserunt numquam hic cum!",
+      github: "",
+      image: "profile.jpg"
     },
   ];
 
   return (
-    <div  className="container facilitator">
-        <h1 className="text-center meet-facilitators">Meet <span className="line">The Facilit</span>ators</h1>
-      <div className=" row no-gutters facilitators">
+    <div>
+      <div style={{width: "100%", height: "90vh"}}>
+        <div className="facilitators-intro">
+          <div >
+            <span style={{color: "#DAA520", fontWeight: "bold"}}>Our Facilitators</span>
+            <h1 >"We never know which lives we influence,<br/> when, or why! We <span style={{color: "#DAA520"}}>JUST DO IT</span>"</h1>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="mario-container py-5">
+          <div className="mario" style={{display: "flex"}}>
+            <div className="px-3">
+              <img src={Mario} alt="Mario Micheal" />
+            </div>
+            <div className=" mario-div px-3">
+              <blockquote className=" text-center p-3"style={{fontSize: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in tellus sem. Nunc justo tortor, pharetra at fringilla eu, volutpat blandit risus. Aenean convallis felis quis diam finibus, sed vestibulum libero ullamcorper. Aliquam sagittis lectus quis purus porta lobortis. Quisque vel ipsum id sem sollicitudin egestas et non neque. Mauris.</blockquote>
+              <div className="mario-text text-center py-2">
+                <span  style={{borderBottom: "1px solid #DAA520"}}>Mario Micheal</span><br/>
+                <span style={{fontSize: "20px"}}>Community Manager</span>
+                <div>
+                  <ul className="social-media-list list-unstyled list-inline text-center">
+                    <li className="list-inline-item">
+                      <button type="button" className="btn btn-circle" style={{backgroundColor: "#DAA520"}}>
+                        <a href="https://www.instagram.com/positive_mario" rel="noopener noreferrer" target="_blank">
+                          <i className="fab fa-instagram"></i>
+                        </a>
+                      </button>
+                    </li>
+                    <li className="list-inline-item">
+                      <button type="button" className="btn btn-circle" style={{backgroundColor: "#DAA520"}}>
+                        <a href="https://twitter.com/Positive_Mario" rel="noopener noreferrer" target="_blank">
+                          <i className="fab fa-twitter"></i>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{width: "100%", height: "300px"}}>
+        <div className="transforming"></div>
+      </div>
+      <div className="cards-container" style={{backgroundColor: "gainsboro"}}>
         {facilitatorDetails.map((facilitator) => {
           return (
-            <div className="col-xs-12 col-sm-6 col-md-3 col-lg-2 no-gutters" key={facilitator.id}>
+            <div key={facilitator.id}>
               <FacilitatorItems facilitator={facilitator} />
             </div>
           );
