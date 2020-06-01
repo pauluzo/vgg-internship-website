@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
 
-export default function SurveyPage() {
+function SurveyPage(props) {
 const Point = 2
 const [firstChoice, setFirstChoice] = useState("")
 const [secondChoice, setSecondChoice] = useState("")
@@ -68,7 +68,12 @@ const givePoints = (questionIndex, Value) => {
     });
 }
 
-  return(
+const goBack = () => {
+  const {history} = props;
+  if(history) history.goBack();
+}
+
+return(
     <div className="survey-page-container" >
       <div className="survey-page-body">
         
@@ -81,8 +86,8 @@ const givePoints = (questionIndex, Value) => {
                 </div>
               </div>
               <div className="intro-text">
-                <div className="close-btn" style={{marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
-                  <Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
+                <div onClick={goBack} className="close-btn" style={{cursor: "pointer", marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
+                  <img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/>
                 </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>
@@ -118,3 +123,5 @@ const givePoints = (questionIndex, Value) => {
     </div>
   );
 }
+
+export default withRouter(SurveyPage);
