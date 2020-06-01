@@ -103,6 +103,7 @@
     .facilitators-intro {
       background-size: contain;
       color: black;
+      border-bottom: 1px solid #DAA520;
     }
     .facilitators-intro div h1 {
       font-family: 'Abril Fatface', cursive;
