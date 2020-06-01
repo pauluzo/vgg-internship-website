@@ -1,0 +1,61 @@
+.facilitator{
+    overflow-x:hidden;
+}
+
+.track{
+    background-color:#2992d0;
+     height:50px;
+     padding:6px 0 0 6px;
+     color:white;
+}
+
+.track span { 
+    font-weight:600px;
+}
+
+/* .bio {
+    height: 70px
+} */
+
+.follow-icon{
+    font-size: 13px;
+    color: #454745;
+}
+
+.follow-icon:hover{
+    font-size:15px;
+    color: #2992d0;
+}
+
+.facilitator-card{
+    margin-bottom: 40px;
+}
+
+.facilitator{
+    margin-top: 40px;
+
+}
+
+.facilitators{
+    margin-top:60px;
+}
+
+.meet-facilitators{
+   margin-bottom: 40px;
+   color: #2992d0;
+}
+
+.line {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2992d0;
+
+}
+
+  
+  
+@media screen and (max-width: 760px) {
+    .facilitator-card{
+        width:60% !important;
+        margin: 0 auto;
+    }
+}
