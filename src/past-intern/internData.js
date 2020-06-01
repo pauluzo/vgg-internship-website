@@ -77,41 +77,41 @@ export const internData = [{
     },
     {
         id: 12,
-        name: "",
+        name: "Emmanuel Owojori",
         track : "Frontend Developer",
         image_url:"",
         Description: "venture garden group(past intern)"
     },
-    {
-        id: 13,
-        name: "",
-        track : "Frontend Developer",
-        image_url:"",
-        Description: "venture garden group(past intern)"
-    },
-    {
-        id: 14,
-        name: "",
-        track : "Frontend Developer",
-        image_url:"",
-        Description: "venture garden group(past intern)"
-    },
-    {
-        id: 15,
-        name: "",
-        track : "Frontend Developer",
-        image_url:"",
-        Description: "venture garden group(past intern)"
-    },
+    // {
+    //     id: 13,
+    //     name: "",
+    //     track : "Frontend Developer",
+    //     image_url:"",
+    //     Description: "venture garden group(past intern)"
+    // },
+    // {
+    //     id: 14,
+    //     name: "",
+    //     track : "Frontend Developer",
+    //     image_url:"",
+    //     Description: "venture garden group(past intern)"
+    // },
+    // {
+    //     id: 15,
+    //     name: "",
+    //     track : "Frontend Developer",
+    //     image_url:"",
+    //     Description: "venture garden group(past intern)"
+    // },
    
     
-    {
-        id: 16,
-        name: "",
-        track : "Frontend Developer",
-        image_url:"",
-        Description: "venture garden group(past intern)"
-    },
+    // {
+    //     id: 16,
+    //     name: "",
+    //     track : "Frontend Developer",
+    //     image_url:"",
+    //     Description: "venture garden group(past intern)"
+    // },
    
     
   
