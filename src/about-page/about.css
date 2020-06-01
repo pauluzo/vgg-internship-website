@@ -73,8 +73,8 @@
   align-items: center;
   padding: 0;
   height: 400px;
+  margin: 50px 0;
   background: rgb(12, 7, 75);
-  margin-top: 200px;
   margin-bottom: 50px;
   overflow: hidden;
 }
@@ -83,7 +83,6 @@
   margin-bottom: 5px;
   color: wheat;
   font-size: 2rem;
-  padding: 20px 10px;
 }
 
 .about__page-info p {
@@ -93,7 +92,7 @@
 
 .about__page-info-left {
   width: 50%;
-  padding: 10px;
+  padding: 30px;
   order: 2;
 }
 
@@ -105,6 +104,10 @@
   background-position: center;
   background-size: cover;
   height: 100%;
+}
+
+.about__page-internship {
+  padding-bottom: 4rem;
 }
 
 .about__page-internship h3 {
@@ -128,6 +131,24 @@
 }
 .feature-box p {
    color: #fff;
+}
+
+/* Scaling section */
+.scaling_section {
+  padding: 50px 0;
+}
+.p-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #084482;
+}
+.p-heading:hover {
+  color: #00aeff;
+}
+.scaling-image img {
+  width: 90%;
 }
 
 @media (max-width: 1160px) {
@@ -201,20 +222,4 @@
   .about__page-hero-body h3::before {
     display: none;
   }
-}
-
-/* Scaling section */
-
-.p-heading {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #084482;
-}
-.p-heading:hover {
-  color: #00aeff;
-}
-.scaling-image img {
-  width: 90%;
 }

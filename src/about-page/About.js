@@ -2,19 +2,22 @@ import React from 'react';
 import './about.css';
 import Feature from './Feature';
 import crowd from './crowd-of-users.svg';
+import scaling from './scaling.png';
 
 const About = () => {
   return (
     <div className="about__page">
-      <div className="about__page-hero">
-        <section className="about__page-hero-body">
-          <h3> Our Mission </h3>
-          <h1>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-            corrupti veritatis odio suscipit ipsam.
-          </h1>
-        </section>
-        <section className="about__page-hero-image"></section>
+      <div className="container">
+        <div className="about__page-hero">
+          <section className="about__page-hero-body">
+            <h3> Our Mission </h3>
+            <h1>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
+              corrupti veritatis odio suscipit ipsam.
+            </h1>
+          </section>
+          <section className="about__page-hero-image"></section>
+        </div>
       </div>
       <div className="about__page-info">
         <div className="about__page-info-left">
@@ -33,47 +36,49 @@ const About = () => {
         <div className="about__page-info-right"></div>
       </div>
       <div className="scaling_section">
-        <div className="row">
-          <div className="col-md-5">
-            <h2>Scaling This</h2>
-            <div className="scaling-image">
-              <img src="scaling.png" alt="scale" />
+        <div className="container">
+          <div className="row">
+            <div className="col-md-5">
+              <h2>Scaling This</h2>
+              <div className="scaling-image">
+                <img src={scaling} className="img-fluid" alt="scale" />
+              </div>
             </div>
-          </div>
-          <div className="col-md-7">
-            <div className="content">
-              <h5 className="p-heading">Increased rate of learning</h5>
-              <p>
-                The interns are given tasks that are more focused with real
-                world experiences. They typically involve a real world task
-                which aims at identifying the most committed/driven interns and
-                helping them harness their skills better.
-              </p>
-            </div>
-            <hr />
-            <div className="content">
-              <h5 className="p-heading">Get paid to learn</h5>
-              <p>
-                Interns get paid on a weekly basis, they gain experience, learn
-                and earn all at the same time.
-              </p>
-            </div>
-            <hr />
-            <div className="content">
-              <h5 className="p-heading">Connect and network</h5>
-              <p>
-                Interns join an online community that will be available 24/7 to
-                network with each other and discuss.
-              </p>
-            </div>
-            <hr />
-            <div className="content">
-              <h5 className="p-heading">Technological approach</h5>
-              <p>
-                We combine technology with a well proven education system of
-                learning to mentor interns and help them grow which in turn
-                advances the ecosystem.
-              </p>
+            <div className="col-md-7">
+              <div className="content">
+                <h5 className="p-heading">Increased rate of learning</h5>
+                <p>
+                  The interns are given tasks that are more focused with real
+                  world experiences. They typically involve a real world task
+                  which aims at identifying the most committed/driven interns and
+                  helping them harness their skills better.
+                </p>
+              </div>
+              <hr />
+              <div className="content">
+                <h5 className="p-heading">Get paid to learn</h5>
+                <p>
+                  Interns get paid on a weekly basis, they gain experience, learn
+                  and earn all at the same time.
+                </p>
+              </div>
+              <hr />
+              <div className="content">
+                <h5 className="p-heading">Connect and network</h5>
+                <p>
+                  Interns join an online community that will be available 24/7 to
+                  network with each other and discuss.
+                </p>
+              </div>
+              <hr />
+              <div className="content">
+                <h5 className="p-heading">Technological approach</h5>
+                <p>
+                  We combine technology with a well proven education system of
+                  learning to mentor interns and help them grow which in turn
+                  advances the ecosystem.
+                </p>
+              </div>
             </div>
           </div>
         </div>
