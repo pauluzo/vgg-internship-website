@@ -10,7 +10,8 @@ function CommunityManager() {
               <img src={Mario} alt="Mario Micheal" />
             </div>
             <div className=" mario-div px-3">
-              <blockquote className=" text-center p-3"style={{fontSize: "20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in tellus sem. Nunc justo tortor, pharetra at fringilla eu, volutpat blandit risus. Aenean convallis felis quis diam finibus, sed vestibulum libero ullamcorper. Aliquam sagittis lectus quis purus porta lobortis. Quisque vel ipsum id sem sollicitudin egestas et non neque. Mauris.</blockquote>
+              <blockquote className=" text-center p-3"style={{fontSize: "20px"}}>VGG Virtual Internship is the remote internship programme of Venture Garden Group which is dedicated to refining and equipping talents across the globe with cutting-edge tech skills.<br />
+              The impact of VGG Virtual Internship can be felt all over the internet. Our vision is to make this virtual internship community the largest and most profitable virtual community for techies in Africa.</blockquote>
               <div className="mario-text text-center py-2">
                 <span  style={{borderBottom: "1px solid #DAA520"}}>Mario Micheal</span><br/>
                 <span style={{fontSize: "20px"}}>Community Manager</span>
