@@ -5,7 +5,6 @@ import "./SurveyPage.css";
 import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
 
-
 function SurveyPage(props) {
 const Point = 2
 const [firstChoice, setFirstChoice] = useState("")
@@ -76,11 +75,9 @@ const goBack = () => {
   if(history) history.goBack();
 }
 
-
-  return(
-    <div className="survey-page-container" >
+return(
+  <div className="survey-page-container" >
       <div className="survey-page-body">
-        
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container">
