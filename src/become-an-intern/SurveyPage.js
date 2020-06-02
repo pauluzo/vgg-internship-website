@@ -13,6 +13,7 @@ const [frontend, setFrontend] = useState(0)
 const [backend, setBackend] = useState(0)
 const [uiux, setUiux] = useState(0)
 const [qa, setQa] = useState(0)
+const [devops, setDevops] = useState(0)
 
 const [showScore, setShowScore] = useState(false)
 const [questionIndex, setquestionIndex] = useState(0) 
@@ -30,8 +31,8 @@ const handleClick = (event) => {
         setquestionIndex(prevIndex => prevIndex + 1)
     } else {
         setShowScore(true)
-        const scores = [frontend, backend, uiux, qa]
-        const Labels = ["Frontend Development", "Backend Development", "UI/UX Design", "Software Quality Assurance"]
+        const scores = [frontend, backend, uiux, qa, devops]
+        const Labels = ["Frontend Development", "Backend Development", "UI/UX Design", "Software Quality Assurance", "DevOps Engineering"]
         getFirstChoice(scores, Labels)
         
         
@@ -62,7 +63,8 @@ const givePoints = (questionIndex, Value) => {
                 track === "frontend" ? setFrontend(prevScore => prevScore + Point) :
                 track === "backend" ? setBackend(prevScore => prevScore + Point) :
                 track === "uiux" ? setUiux(prevScore => prevScore + Point) :
-                setQa(prevScore => prevScore + Point)
+                track === "qa" ? setQa(prevScore => prevScore + Point) :
+                setDevops(prevScore => prevScore + Point)
             });
         }
     });
@@ -74,9 +76,8 @@ const goBack = () => {
 }
 
 return(
-    <div className="survey-page-container" >
+  <div className="survey-page-container" >
       <div className="survey-page-body">
-        
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container">

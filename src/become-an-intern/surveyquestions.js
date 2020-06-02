@@ -8,7 +8,7 @@ export const Questions = [
         },
         {
           answer: "Structure",
-          track: ["backend"],
+          track: ["backend", "devops"],
         },
         {
           answer: "Both",
@@ -21,7 +21,7 @@ export const Questions = [
       answers: [
         {
           answer: "Not quite",
-          track: ["backend"],
+          track: ["backend", "devops"],
         },
         {
           answer: "Somewhat",
@@ -43,7 +43,7 @@ export const Questions = [
         },
         {
           answer: "Feel",
-          track: ["frontend", "backend"],
+          track: ["frontend", "backend", "devops"],
         },
         {
           answer: "Both",
@@ -57,7 +57,7 @@ export const Questions = [
       answers: [
         {
           answer: "Yes",
-          track: ["frontend", "qa", "uiux", "backend"],
+          track: ["frontend", "qa", "uiux", "backend", "devops"],
         },
         {
           answer: "No",
@@ -78,7 +78,7 @@ export const Questions = [
         },
         {
           answer: "Somewhat",
-          track: ["frontend"],
+          track: ["frontend", "devops"],
         },
         {
           answer: "Very",
@@ -96,11 +96,11 @@ export const Questions = [
         },
         {
           answer: "Analytical",
-          track: ["backend"],
+          track: ["backend", "devops"],
         },
         {
           answer: "Both",
-          track: ["frontend", "qa", "uiux", "backend"],
+          track: ["frontend", "qa", "uiux", "backend", "devops"],
         },
       ],
     },
@@ -109,11 +109,11 @@ export const Questions = [
       answers: [
         {
           answer: "Not quite",
-          track: ["backend"],
+          track: ["backend", "devops"],
         },
         {
           answer: "Somewhat",
-          track: ["backend"],
+          track: ["backend", "devops"],
         },
         {
           answer: "Very",
@@ -130,11 +130,11 @@ export const Questions = [
         },
         {
           answer: "Somewhat",
-          track: ["frontend", "backend"],
+          track: ["frontend", "backend", "devops"],
         },
         {
           answer: "Very",
-          track: ["qa", "backend"],
+          track: ["qa", "backend", "devops"],
         },
       ],
     },
@@ -151,7 +151,7 @@ export const Questions = [
         },
         {
           answer: "Very",
-          track: ["qa"],
+          track: ["qa", "devops"],
         },
       ],
     },
@@ -168,7 +168,7 @@ export const Questions = [
         },
         {
           answer: "I don't Know",
-          track: ["backend", "frontend"],
+          track: ["backend", "frontend", "devops"],
         },
       ],
     },
@@ -177,7 +177,7 @@ export const Questions = [
         answers: [
           {
             answer: "Efficiency",
-            track: ["frontend", "backend"],
+            track: ["frontend", "backend", "devops"],
           },
           {
             answer: "Order",
@@ -185,7 +185,7 @@ export const Questions = [
           },
           {
             answer: "Compliance",
-            track: ["qa"],
+            track: ["qa", "devops"],
           },
         ],
       },
@@ -194,7 +194,7 @@ export const Questions = [
         answers: [
           {
             answer: "I enjoy them",
-            track: ["backend", "qa"],
+            track: ["backend", "qa", "devops"],
           },
           {
             answer: "They bore me",
@@ -207,7 +207,24 @@ export const Questions = [
         ],
       },
       {
-        question: "How Diplomatic are you?",
+        question: "Do you get enthusiastic about discussions on cybersecurity vulnerabilities",
+        answers: [
+          {
+            answer: "All the time",
+            track: ["devops"],
+          },
+          {
+            answer: "Sometimes",
+            track: ["qa", "backend"],
+          },
+          {
+            answer: "hardly",
+            track: ["frontend", "uiux"],
+          },
+        ],
+      },
+      {
+        question: "How good are you with spotting automation and testing errors?",
         answers: [
           {
             answer: "Not quite",
@@ -215,7 +232,24 @@ export const Questions = [
           },
           {
             answer: "Somewhat",
-            track: ["frontend", "uiux", "backend"],
+            track: ["qa", "devops"],
+          },
+          {
+            answer: "Very",
+            track: ["qa", "devops"],
+          },
+        ],
+      },
+      {
+        question: "How Diplomatic are you?",
+        answers: [
+          {
+            answer: "Not quite",
+            track: ["frontend", "uiux", "backend", "devops"],
+          },
+          {
+            answer: "Somewhat",
+            track: ["frontend", "uiux", "backend", "devops"],
           },
           {
             answer: "Very",
@@ -224,11 +258,28 @@ export const Questions = [
         ],
       },
       {
+        question: "Rate your flexibility and adaptability skills",
+        answers: [
+          {
+            answer: "Below Average",
+            track: ["uiux"],
+          },
+          {
+            answer: "Average",
+            track: ["frontend", "backend", "qa"],
+          },
+          {
+            answer: "Above Average",
+            track: ["devops"],
+          },
+        ],
+      },
+      {
         question: "Which of the following appeals to you the most?",
         answers: [
           {
             answer: "Speed",
-            track: ["frontend", "backend"],
+            track: ["frontend", "backend", "devops"],
           },
           {
             answer: "Colour interaction",
