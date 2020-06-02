@@ -170,6 +170,7 @@ export const RegistrationForm = () => {
               <option></option>
               <option>Frontend</option>
               <option>Backend</option>
+              <option>DevOps</option>
               <option>UI/UX designer</option>
               <option>Software Quality Assurance</option>
             </Form.Control>

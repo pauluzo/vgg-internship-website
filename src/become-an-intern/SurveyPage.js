@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Image from "./images/intro-img.png";
 import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
 
-export default function SurveyPage() {
+
+function SurveyPage(props) {
 const Point = 2
 const [firstChoice, setFirstChoice] = useState("")
 const [secondChoice, setSecondChoice] = useState("")
@@ -13,7 +14,7 @@ const [frontend, setFrontend] = useState(0)
 const [backend, setBackend] = useState(0)
 const [uiux, setUiux] = useState(0)
 const [qa, setQa] = useState(0)
-const [point, setPoint] = useState(0)
+const [devops, setDevops] = useState(0)
 
 const [showScore, setShowScore] = useState(false)
 const [questionIndex, setquestionIndex] = useState(0) 
@@ -31,8 +32,8 @@ const handleClick = (event) => {
         setquestionIndex(prevIndex => prevIndex + 1)
     } else {
         setShowScore(true)
-        const scores = [frontend, backend, uiux, qa]
-        const Labels = ["Frontend Development", "Backend Development", "UI/UX Design", "Software Quality Assurance"]
+        const scores = [frontend, backend, uiux, qa, devops]
+        const Labels = ["Frontend Development", "Backend Development", "UI/UX Design", "Software Quality Assurance", "DevOps Engineering"]
         getFirstChoice(scores, Labels)
         
         
@@ -64,11 +65,17 @@ const givePoints = (questionIndex, Value) => {
                 track === "backend" ? setBackend(prevScore => prevScore + Point) :
                 track === "uiux" ? setUiux(prevScore => prevScore + Point) :
                 track === "qa" ? setQa(prevScore => prevScore + Point) :
-                setPoint(prevScore => prevScore + 0)
+                setDevops(prevScore => prevScore + Point)
             });
         }
     });
 }
+
+const goBack = () => {
+  const {history} = props;
+  if(history) history.goBack();
+}
+
 
   return(
     <div className="survey-page-container" >
@@ -83,8 +90,8 @@ const givePoints = (questionIndex, Value) => {
                 </div>
               </div>
               <div className="intro-text">
-                <div className="close-btn" style={{marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
-                  <Link to="/registration-form"><img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/></Link>
+                <div onClick={goBack} className="close-btn" style={{cursor: "pointer", marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
+                  <img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/>
                 </div>
                 <span className="span-1">Survey</span>
                 <span className="span-2">Questionnaire</span>
@@ -120,3 +127,5 @@ const givePoints = (questionIndex, Value) => {
     </div>
   );
 }
+
+export default withRouter(SurveyPage);
