@@ -52,14 +52,14 @@ const PastInternDetails = [
       id: 8,
       name: "Robertito 1 Orazu",
       track: "Frontend Developer",
-      image: "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+      image: "https://res.cloudinary.com/dwh9qmkfa/image/upload/v1590918334/videos/Robert_Orazu.259434_k5joqv.jpg"
     },
 
     {
       id: 9,
       name: "Samuel Ayegbusi",
       track: "Frontend Developer",
-      image: "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+      image: "https://res.cloudinary.com/dev-sam/image/upload/v1590869859/cenfhe6rjnaoet7tstrw.jpg"
     },
 
     {
@@ -74,8 +74,13 @@ const PastInternDetails = [
       name: "Usman Sakirat Kehinde",
       track: "Fronend Developer",
       image: "https://res.cloudinary.com/shakirah/image/upload/v1523834950/shakira.jpg"
+    },
+    {
+        id: 12,
+        name: "Emmanuel Owojori",
+        track : "Frontend Developer",
+        image: "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
     }
   ]
 
   export default PastInternDetails
-  
