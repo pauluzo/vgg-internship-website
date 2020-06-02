@@ -78,3 +78,4 @@ const PastInternDetails = [
   ]
 
   export default PastInternDetails
+  
