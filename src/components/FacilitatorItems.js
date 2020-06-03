@@ -8,7 +8,7 @@ const FacilitatorItems = ({ facilitator }) => {
     
 
   return (
-    <div className="card">
+    <div className="tutor-card">
       <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "25px",marginBottom: "25px"}}>
         <div>
         <div className="img-div">

@@ -70,16 +70,17 @@
     font-size: 25px;
   }
   
-  .card {
+  .tutor-card {
     width: 300px;
     height: 450px;
     margin: 10px;
     text-align: center;
     padding: 20px;
+    background-color: white;
     box-shadow: 3px 3px 3px #a1a1a1;
     transition: transform .2s linear;
   }
-  .card:hover {
+  .tutor-card:hover {
     transform: scale(1.02);
 
   }
