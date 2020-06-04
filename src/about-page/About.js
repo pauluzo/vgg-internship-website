@@ -10,16 +10,16 @@ const About = () => {
       <div className="container">
         <div className="about__page-hero">
           <section className="about__page-hero-body">
-            <h3> Our Mission </h3>
+            <h3> Our Vision </h3>
             <h1>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo
-              corrupti veritatis odio suscipit ipsam.
+              Our vision is to make this virtual internship community the largest 
+              and most profitable virtual community for techies in Africa.
             </h1>
           </section>
           <section className="about__page-hero-image"></section>
         </div>
       </div>
-      <div className="about__page-info">
+      <div className="container about__page-info">
         <div className="about__page-info-left">
           <h2>Building World-Class Talent</h2>
           <p>
@@ -39,7 +39,6 @@ const About = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-5">
-              <h2>Scaling This</h2>
               <div className="scaling-image">
                 <img src={scaling} className="img-fluid" alt="scale" />
               </div>
