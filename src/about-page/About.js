@@ -1,7 +1,5 @@
 import React from 'react';
 import './about.css';
-import Feature from './Feature';
-import crowd from './crowd-of-users.svg';
 import scaling from './scaling.png';
 
 const About = () => {
@@ -23,14 +21,13 @@ const About = () => {
         <div className="about__page-info-left">
           <h2>Building World-Class Talent</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-            ratione esse. Distinctio illum qui praesentium in voluptate, earum
-            ab magnam quod ex asperiores quos. Vel commodi voluptatibus non
-            obcaecati deserunt. <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
-            ratione esse. Distinctio illum qui praesentium in voluptate, earum
-            ab magnam quod ex asperiores quos. Vel commodi voluptatibus non
-            obcaecati deserunt!
+            The aim of this remote internship is to contibute to building
+            the tech ecosystem in Africa by harnessing the wealth of
+            experienced tech staff in VGG to provide tutelage and mentorship
+            to those who aspire to build a career in tech. 
+            This is achieved by enabling the interns with access to seasoned 
+            tutorials from experts in their desired field. It also guarantees that the
+            interns are taught in line with the industry's best practices and standards.
           </p>
         </div>
         <div className="about__page-info-right"></div>
@@ -45,20 +42,20 @@ const About = () => {
             </div>
             <div className="col-md-7">
               <div className="content">
-                <h5 className="p-heading">Increased rate of learning</h5>
+                <h5 className="p-heading">Practical learning</h5>
                 <p>
-                  The interns are given tasks that are more focused with real
-                  world experiences. They typically involve a real world task
-                  which aims at identifying the most committed/driven interns and
-                  helping them harness their skills better.
+                  The interns are given tasks and assignments after each week 
+                  of tutelage, to ensure that they get to practice what they are 
+                  taught. They also get feedbacks and detailed reviews from the tutors.
                 </p>
               </div>
               <hr />
               <div className="content">
-                <h5 className="p-heading">Get paid to learn</h5>
+                <h5 className="p-heading">Have fun while learning</h5>
                 <p>
-                  Interns get paid on a weekly basis, they gain experience, learn
-                  and earn all at the same time.
+                  Interns get to participate in weekly virtual games which are both
+                  challenging and exciting. Interns represent their tracks to 
+                  make sure they bring the coveted prize home
                 </p>
               </div>
               <hr />
@@ -71,11 +68,11 @@ const About = () => {
               </div>
               <hr />
               <div className="content">
-                <h5 className="p-heading">Technological approach</h5>
+                <h5 className="p-heading">Get career coaching</h5>
                 <p>
-                  We combine technology with a well proven education system of
-                  learning to mentor interns and help them grow which in turn
-                  advances the ecosystem.
+                  Interns receive career coaching from industry experts in the 
+                  tech field, through virtual coaching sessions organised
+                  by the remote internship team.
                 </p>
               </div>
             </div>
@@ -83,35 +80,7 @@ const About = () => {
         </div>
         <hr />
       </div>
-      <div className="container">
-        <div className="about__page-internship">
-          <div className="text-center">
-            <h3 className="text-vgg-blue">How the Internship works</h3>
-            <p>We combine technology with a well proven education system of learning to mentor interns and help them grow which in turn advances the ecosystem.</p>
-          </div>
-          <div className="row mt-5">
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6">
-              <Feature src={crowd} alt="crowd of users" details="EVERYONE CAN JOIN, NO EXTRANCE EXAM NEEDED" />
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
   );
 };
 

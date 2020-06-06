@@ -29,11 +29,12 @@
 .about__page-hero-body h1 {
   font-size: 2.2rem;
   width: 550px;
-  color: rgb(12, 8, 80);
+  color: rgb(35, 155, 35);
   line-height: 35px;
 }
 
 .about__page-hero-body h3 {
+  color: rgb(35, 155, 35);
   font-size: 1.5rem;
   position: relative;
   display: flex;
@@ -47,7 +48,7 @@
 
 .about__page-hero-body h3::after {
   content: "";
-  background: rgb(12, 7, 75);
+  background: rgb(35, 155, 35);
   height: 5px;
   width: 50px;
   z-index: 2;
@@ -58,7 +59,7 @@
 
 .about__page-hero-body h3::before {
   content: "";
-  background: rgb(12, 7, 75);
+  background-color: rgb(35, 155, 35);
   height: 5px;
   width: 50px;
   z-index: 2;
@@ -73,21 +74,23 @@
   align-items: center;
   padding: 0;
   height: 400px;
-  margin: 50px 0;
-  background: rgb(12, 7, 75);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
   margin-bottom: 50px;
   overflow: hidden;
 }
 
 .about__page-info h2 {
   margin-bottom: 5px;
-  color: wheat;
+  color: white;
   font-size: 2rem;
 }
 
 .about__page-info p {
-  color: wheat;
+  color: rgb(35, 155, 35);
   font-size: 1.1rem;
+  line-height: 1.8em;
 }
 
 .about__page-info-left {
@@ -142,10 +145,7 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #084482;
-}
-.p-heading:hover {
-  color: #00aeff;
+  color: rgb(12, 116, 12);;
 }
 .scaling-image img {
   width: 90%;
@@ -191,6 +191,10 @@
 }
 
 @media (max-width: 700px) {
+  .scaling-image {
+    margin-bottom: 30px;
+  }
+
   .about__page-hero-body {
     width: 90%;
   }
