@@ -1,0 +1,229 @@
+.about__page {
+  position: relative;
+}
+
+.about__page-hero {
+  display: flex;
+  padding: 20px 10px;
+  height: 500px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+  z-index: 6;
+}
+
+.about__page-hero-body,
+.about__page-hero-image {
+  width: 50%;
+}
+
+.about__page-hero-image {
+  background: url("./about.png");
+  object-fit: cover;
+  background-position: top center;
+  background-size: cover;
+  height: 100%;
+}
+
+.about__page-hero-body h1 {
+  font-size: 2.2rem;
+  width: 550px;
+  color: rgb(35, 155, 35);
+  line-height: 35px;
+}
+
+.about__page-hero-body h3 {
+  color: rgb(35, 155, 35);
+  font-size: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 238px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+.about__page-hero-body h3::after {
+  content: "";
+  background: rgb(35, 155, 35);
+  height: 5px;
+  width: 50px;
+  z-index: 2;
+  top: 15px;
+  position: absolute;
+  right: 0;
+}
+
+.about__page-hero-body h3::before {
+  content: "";
+  background-color: rgb(35, 155, 35);
+  height: 5px;
+  width: 50px;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+
+.about__page-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.about__page-info h2 {
+  margin-bottom: 5px;
+  color: white;
+  font-size: 2rem;
+}
+
+.about__page-info p {
+  color: rgb(35, 155, 35);
+  font-size: 1.1rem;
+  line-height: 1.8em;
+}
+
+.about__page-info-left {
+  width: 50%;
+  padding: 30px;
+  order: 2;
+}
+
+.about__page-info-right {
+  width: 50%;
+  order: 1;
+  background: url("./software.png");
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+.about__page-internship {
+  padding-bottom: 4rem;
+}
+
+.about__page-internship h3 {
+   font-size: 35px;
+   line-height: 39px;
+}
+.about__page-internship p {
+   font-size: 23px;
+   line-height: 30px;
+   font-weight: 300;
+   color: #013042;
+   margin-top: 10px;
+}
+.text-vgg-blue {
+   color: #2992d0 !important;
+}
+.feature-box {
+   background: #67c1ee;
+   padding: 2rem;
+   margin-top: 1rem;
+}
+.feature-box p {
+   color: #fff;
+}
+
+/* Scaling section */
+.scaling_section {
+  padding: 50px 0;
+}
+.p-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: rgb(12, 116, 12);;
+}
+.scaling-image img {
+  width: 90%;
+}
+
+@media (max-width: 1160px) {
+  .about__page-hero {
+    flex-direction: column;
+  }
+
+  .about__page-hero-image {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.4;
+    height: 100%;
+  }
+
+  .about__page-hero-body {
+    width: 70%;
+    z-index: 10;
+  }
+
+  .about__page-hero-body h1 {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .about__page-info {
+    flex-direction: column;
+    height: 100%;
+    padding: 30px 5px;
+  }
+
+  .about__page-info-left {
+    width: 70%;
+  }
+
+  .about__page-info-right {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .scaling-image {
+    margin-bottom: 30px;
+  }
+
+  .about__page-hero-body {
+    width: 90%;
+  }
+
+  .about__page-hero-body h1 {
+    font-size: 1.9rem;
+  }
+
+  .about__page-info-left {
+    width: 99%;
+  }
+}
+
+@media (max-width: 290px) {
+  .about__page-hero-body {
+    width: 99%;
+  }
+
+  .about__page-hero-body h1 {
+    font-size: 1.8rem;
+  }
+
+  .about__page-hero-body h3 {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .about__page-hero-body h3::after,
+  .about__page-hero-body h3::before {
+    display: none;
+  }
+}
