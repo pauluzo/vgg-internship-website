@@ -1,120 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap');
 * {
-    padding: 0;
-    margin: 0
+  padding: 0;
+  margin: 0;
 }
 .fab {
-    color: white;
+  color: white;
 }
 
 .img-div {
-    width: 200px;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .mario-div {
-    position: relative;
-    right: 0%;
-    animation-name: converge1;
-    animation-duration: 3s;
+  position: relative;
+  right: 0%;
+  animation-name: converge1;
+  animation-duration: 3s;
 }
 
 @keyframes converge1 {
-    0%   {right:-50%;}
-    100% {right:0%;}
+  0% {
+    right: -50%;
   }
-.img-div img {
-    display: block;
-    width: 100%;
-    height: 100%
+  100% {
+    right: 0%;
+  }
 }
-.facilitators-name, .facilitators-track {
-    font-family: 'Abril Fatface', cursive;
+.img-div img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.facilitators-name,
+.facilitators-track {
+  font-family: 'Abril Fatface', cursive;
 }
 .facilitators-intro {
-    width: 100%;
-    height: 100%;
-    background-color: "gainsboro";
-    background-image: url("../images/vggspartan.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    color: white;
-  }
-  .facilitators-intro div {
-    font-size: 23px;
-    margin-top: 250px;
-  }
-
-  .facilitators-intro div h1 {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 55px;
-  }
-.transforming {
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/transforming.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+  width: 100%;
+  background-color: 'gainsboro';
+  background-image: url('../images/vggspartan.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-attachment: fixed;
+  position: relative;
+  padding: 10px;
 }
 
-  .mario-text {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 25px;
-  }
-  
-  .tutor-card {
-    width: 300px;
-    height: 450px;
-    margin: 10px;
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 3px 3px 3px #a1a1a1;
-    transition: transform .2s linear;
-  }
-  .tutor-card:hover {
-    transform: scale(1.02);
+.facilitators-intro::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
+.facilitators-intro * {
+  z-index: 1;
+}
+
+.facilitators-intro div {
+  font-size: 23px;
+  margin-top: 250px;
+}
+
+.facilitators-intro div h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 55px;
+}
+
+.mario-container {
+  display: flex;
+  margin: 100px auto;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  padding-top: 30px;
+  min-height: 500px;
+}
+
+.transforming {
+  width: 100vw;
+  min-height: 300px;
+  background-image: url('../images/transforming.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mario-text {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 25px;
+}
+
+.tutor-card {
+  width: 300px;
+  height: 450px;
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 3px 3px 3px #a1a1a1;
+  transition: transform 0.2s linear;
+}
+.tutor-card:hover {
+  transform: scale(1.02);
+}
+.facilitators-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 100px;
+}
+
+.cards-container h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Lato', sans-serif;
+  padding: 20px;
+}
+
+@media screen and (max-width: 670px) {
+  .facilitator-card {
+    width: 60% !important;
+    margin: 0 auto;
   }
-  .cards-container {
+  .mario {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 100px;
   }
-  
-@media screen and (max-width: 670px) {
-    .facilitator-card{
-        width:60% !important;
-        margin: 0 auto;
-    }
-    .mario {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .facilitators-intro {
-      background-size: contain;
-      color: black;
-      border-bottom: 1px solid #DAA520;
-    }
-    .facilitators-intro div h1 {
-      font-family: 'Abril Fatface', cursive;
-      font-size: 40px;
-    }
-    .mario-container {
-      padding-top: 0px;
-      padding-bottom: 50px;
-    }
-    .transforming {
-      background-size: contain;
+  .facilitators-intro div h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 40px;
+  }
+  .mario-container {
+    flex-direction: column;
+  }
+  .mario-container img {
+    height: 200px;
+    margin: 10px;
+  }
+  .transforming {
+    background-size: contain;
   }
 }
