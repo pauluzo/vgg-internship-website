@@ -94,7 +94,7 @@ html, *{
     display: flex;
     align-items: center;
     padding: 0px 125px 0px;
-    height: 95vh;
+    height: 100vh;
     justify-content: space-between;
 }
 .intro>div{
@@ -104,7 +104,7 @@ html, *{
 }
 .intro-row{
     position: absolute;
-    top: 10rem;
+    top: 20rem;
     
 }
 .intro-text>div{
@@ -148,6 +148,7 @@ html, *{
         flex-direction: column-reverse!important;
         justify-content: center;
         padding: 2rem;
+        margin-top: 5rem;
        
     }
     .intro-text>div{

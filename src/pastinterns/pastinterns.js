@@ -1,7 +1,6 @@
 import React from 'react'
 import CommunityManager from "../components/communityManager"
 import "./pastinternsstyle.css"
-import FacilitatorItems from "../components/FacilitatorItems"
 import PastInternDetails from './pastinternsdata'
 import PastInternsCard from './pastinternscard'
 
