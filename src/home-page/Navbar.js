@@ -14,9 +14,10 @@ import { Nav, Navbar} from "react-bootstrap";
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto pointer">
           <Nav.Link className="text-white text" href="/">Home</Nav.Link>
+          <Nav.Link className="text-white text" href="/join-the-mission">Join The Mission</Nav.Link>
+          <Nav.Link className="text-white text" href="/facilitators">Tutors</Nav.Link>
+          <Nav.Link className="text-white text" href="/past-interns">Past Interns</Nav.Link>
           <Nav.Link className="text-white text" href="/about">About</Nav.Link>
-          <Nav.Link className="text-white text" href="/tutors">Tutors</Nav.Link>
-          <Nav.Link className="text-white text" href="/interns">Past Interns</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       
