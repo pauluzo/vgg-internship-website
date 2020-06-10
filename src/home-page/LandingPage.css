@@ -87,26 +87,72 @@ html, *{
 /* Intro Section */
 .intro{
     background: url('https://i.ibb.co/26dyq7b/Vector.png') no-repeat;
-    background-size: 100%;
-    background-position-y: -130px;
+    background-size: 100% 100%;
     background-color: var(--dark-blue);
     color: var(--text-light);
     display: flex;
     align-items: center;
-    padding: 0px 125px 0px;
+    padding: 0px 5%;
+    padding-top: 70px;
     height: 100vh;
-    justify-content: space-between;
+    justify-content: center;
 }
-.intro>div{
+
+.intro-div {
+    height: 100%;
+    width: 100%;
+
+}
+
+.intro-div>.particles{
+    top: 0px;
+    left: 0px;
     width:100%;
+    height: 100%;
    position: absolute;
    
 }
-.intro-row{
-    position: absolute;
-    top: 20rem;
-    
+.intro-div-row{
+    height: 100%;
+    margin: 0px;
+    flex-wrap: wrap-reverse;
 }
+
+.intro-col1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.intro-heading h1 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+
+.intro-heading p {
+    line-height: 1.5em;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.intro-img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+    
+.intro-img img {
+    width: 100%;
+    height: auto;
+}
+
 .intro-text>div{
     letter-spacing: 0.175rem;
     padding: 2rem;
@@ -119,11 +165,12 @@ html, *{
 
 .get-started-btn{
     padding: 10px 50px;
+    max-width: 200px;
     background-color: var(--lemon-green);
     color: var(--text-light);
     border: none;
     border-radius: 20px;
-    font-weight: weight;
+    font-weight: 700;
 }
 
 
@@ -198,8 +245,8 @@ html, *{
         font-size: 16px;
         line-height: 26px;
     }
- .intro{
-        padding: 60px 0px 80px;
+    .intro{
+        padding: 70px 0px;
     }
 
     .illustration-parent{
