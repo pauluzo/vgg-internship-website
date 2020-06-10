@@ -487,6 +487,40 @@ footer{
     padding: 175px 0 20px;
     position: relative;
 }
+
+.intro-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    color: var(--text-light);
+    padding: 20px 5%;
+    width: 100%;
+}
+
+.footer-div1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.footer-media {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    flex-wrap: wrap;
+}
+
+.footer-media>div {
+    padding: 10px 0px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: space-between;
+    max-width: 150px;
+    margin-left: auto;
+}
+
 .bottom-half{
     padding-left: 125px;
     padding-right: 125px;
@@ -547,6 +581,14 @@ footer{
     line-height: 14px;
     
 }
+
+@media screen and (max-width:767px) {
+    .footer-socials {
+        margin-left: 0px;
+        margin-right: auto;
+    }
+}
+
 @media screen and (max-width:650px){
 
     .subscribe{
