@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 .background{
     background-color:  #053343;
 }
@@ -87,7 +87,7 @@ html, *{
 /* Intro Section */
 .intro{
     background: url('https://i.ibb.co/26dyq7b/Vector.png') no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-color: var(--dark-blue);
     color: var(--text-light);
     display: flex;
@@ -132,6 +132,7 @@ html, *{
 }
 
 .intro-heading h1 {
+    font-weight: bolder;
     padding-bottom: 20px;
     border-bottom: 1px solid white;
 }
@@ -194,6 +195,9 @@ html, *{
 }
 
 @media screen and (max-width:992px){
+    .intro {
+        background-size: 100% 100%;
+    }
     .intro-row{
         display: flex;
         flex-direction: column-reverse!important;

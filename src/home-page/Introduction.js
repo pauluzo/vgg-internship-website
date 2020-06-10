@@ -59,10 +59,10 @@ export const Introduction = () => {
                 }
           }}
         />
-        <div className="row intro-div-row">
+        <div className="row intro-div-row px-2">
           <div className="col-lg-6 intro-col1">
             <div className="intro-heading">
-              <h1>
+              <h1 className="text-center">
                 VGG Virtual Internship
               </h1>
               <p>The VGG Virtual Internship is a remote internship hosted by
