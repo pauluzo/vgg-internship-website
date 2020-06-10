@@ -31,6 +31,11 @@ const InternshipTracks = () => {
             options={' Software testing & Quality assurance'}
             TrackId={4}
         />
+        <InternshipTrackDetails 
+            options={'Docker | Kubernetes | Gradle'}
+            tracks={'DevOps Engineering'}
+            TrackId={5}
+        />
        
         </div>
     </div>

@@ -9,9 +9,6 @@ const InternActivities = () => {
                 <div className="col-lg-6">
                     <h2 className="learn-and-fun">You <span className="green">learn</span><br/> and have <span className="orange">fun</span></h2>
                 </div>
-                <div className="col-lg-6">
-                    <p className="mb-4 -my-3 work-n-play">You know what they say about all work and no play. Well, we hold that to high esteem</p>
-                </div>
             </div>
             <div className="row activities-row">
                 <div className="col-lg-6">
