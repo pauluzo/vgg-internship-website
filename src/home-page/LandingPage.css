@@ -173,6 +173,10 @@ html, *{
     font-weight: 700;
 }
 
+.get-started-btn:hover {
+    text-decoration: none;
+}
+
 
 .illustration-parent{
     display: flex;

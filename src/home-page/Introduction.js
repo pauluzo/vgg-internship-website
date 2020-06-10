@@ -68,7 +68,7 @@ export const Introduction = () => {
               <p>The VGG Virtual Internship is a remote internship hosted by
                 Venture Garden Group that seeks to build and upskill talent across Africa
               </p>
-              <button className="get-started-btn">Get Started</button>
+              <a href="/registration-form" className="get-started-btn">Get Started</a>
             </div>
           </div>
           <div className="col-lg-6 intro-col1">
