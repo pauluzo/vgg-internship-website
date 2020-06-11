@@ -173,6 +173,7 @@ html, *{
     border: none;
     border-radius: 20px;
     font-weight: 700;
+    text-align: center;
 }
 
 .get-started-btn:hover {
