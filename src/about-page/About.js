@@ -1,10 +1,14 @@
 import React from 'react';
 import './about.css';
 import scaling from './scaling.png';
+import NavBar from "../home-page/Navbar"
+import Footer from "../home-page/Footer"
 
 const About = () => {
   return (
-    <div className="about__page">
+    <>
+    <NavBar/>
+    <div style={{paddingTop: "70px"}} className="about__page">
       <div className="container">
         <div className="about__page-hero">
           <section className="about__page-hero-body">
@@ -80,7 +84,9 @@ const About = () => {
         </div>
         <hr />
       </div>
-      </div>
+    </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -10,7 +10,6 @@
   overflow: hidden;
   align-items: center;
   position: relative;
-  z-index: 6;
 }
 
 .about__page-hero-body,
@@ -138,7 +137,7 @@
 
 /* Scaling section */
 .scaling_section {
-  padding: 50px 0;
+  padding-top: 50px;
 }
 .p-heading {
   font-size: 18px;

@@ -11,7 +11,7 @@ import { Nav, Navbar} from "react-bootstrap";
       <img  style={{width:"200px", textAlign: "center"}}  src="https://res.cloudinary.com/dev-sam/image/upload/v1590685777/we7l1ttvgs6btbvuilvt.png" alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{color: "white"}}/>
-      <Navbar.Collapse id="responsive-navbar-nav" style={{zIndex: "1", backgroundColor: "inherit"}}>
+      <Navbar.Collapse id="responsive-navbar-nav" style={{zIndex: "1", backgroundColor: "inherit", paddingLeft: "10px"}}>
         <Nav className="ml-auto pointer">
           <Nav.Link className="text-white text" href="/">Home</Nav.Link>
           <Nav.Link className="text-white text" href="/registration-form">Register</Nav.Link>
