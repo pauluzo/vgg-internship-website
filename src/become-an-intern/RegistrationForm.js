@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Col, Button, Container, Card } from 'react-bootstrap';
 import { Redirect, Link } from 'react-router-dom';
 import Axios from 'axios';
@@ -42,12 +42,64 @@ export const RegistrationForm = () => {
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
-      event.stopPropagation();
+      handleErrors(event);
     } else {
       setValidated(true);
       handlePost();
     }
   };
+
+  const handleErrors = (e) => {
+    let errors = {};
+    const { name, value } = e.target;
+    switch (name) {
+      case 'firstName':
+        errors.firstName = value === '' ? 'Please fill this field' : '';
+        break;
+      case 'lastName':
+        errors.lastName = value === '' ? 'Please fill this field' : '';
+        break;
+      case 'email':
+        errors.email = validEmailRegex.test(value) ? '' : 'Email is invalid';
+        break;
+      case 'phoneNumber':
+        errors.phoneNumber =
+          value.length <= 0 ? 'We would need your number' : '';
+        break;
+      case 'gender':
+        errors.gender = value === '' ? 'Please select your gender' : '';
+        break;
+      case 'dob':
+        errors.dob = value === '' ? 'Your birthday is important to us' : '';
+        break;
+
+      case 'track':
+        errors.track = value === '' ? 'Please select your track' : '';
+        break;
+      case 'proficiency':
+        errors.proficiency = value === '' ? 'How good are you' : '';
+        break;
+      case 'city':
+        errors.city = value === '' ? 'What city do you live in' : '';
+        break;
+      case 'state':
+        errors.state = value === '' ? 'In what state' : '';
+        break;
+      case 'country':
+        errors.country = value === '' ? 'In what country' : '';
+        break;
+      default:
+        break;
+    }
+
+    setErrors({
+      errors,
+    });
+  };
+
+  const validEmailRegex = RegExp(
+    /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
+  );
 
   const renderRedirect = () => {
     if (redirect) {
@@ -120,6 +172,11 @@ export const RegistrationForm = () => {
                 className='form-control'
               />
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              {errors.firstName && (
+                <Form.Control.Feedback type='invalid'>
+                  Please input a valid email.
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
             <Form.Group as={Col} md='6' controlId='lastNameValidation'>
               <Form.Label>
