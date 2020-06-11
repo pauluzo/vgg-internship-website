@@ -81,7 +81,7 @@ return(
   <>
   <NavBar/>
   <div className="survey-page-container" style={{paddingTop: "70px"}} >
-      <div className="survey-page-body py-3">
+      <div className="survey-page-body">
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container p-3">
@@ -100,7 +100,7 @@ return(
             </div>
           </div>
         </div>
-        <div className="survey-question px-3">
+        <div className="survey-question px-2">
           {showScore? 
           <div className="result">
             <div>
@@ -118,9 +118,9 @@ return(
             </div>
             <div className="question py-2">{questionText}</div>
             <div className="button-container py-2">
-              <button type="button" className="option-btn my-1" value={firstButton} onClick={handleClick}>{firstButton}</button>
-              <button type="button" className="option-btn my-1" value={secondButton} onClick={handleClick}>{secondButton}</button>
-              <button type="button" className="option-btn my-1" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+              <button type="button" className="option-btn my-2" value={firstButton} onClick={handleClick}>{firstButton}</button>
+              <button type="button" className="option-btn my-2" value={secondButton} onClick={handleClick}>{secondButton}</button>
+              <button type="button" className="option-btn my-2" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
             </div>
           </div>}
         </div>
