@@ -117,10 +117,10 @@ return(
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
             <div className="question py-2">{questionText}</div>
-            <div className="button-container py-2" style={{height: "500px"}}>
-              <button type="button" className="option-btn btn btn-sm mb-3" value={firstButton} onClick={handleClick}>{firstButton}</button>
-              <button type="button" className="option-btn btn btn-sm mb-3" value={secondButton} onClick={handleClick}>{secondButton}</button>
-              <button type="button" className="option-btn btn btn-sm mb-3" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+            <div className="button-container py-2">
+              <button type="button" className="btn btn-success btn-sm mb-3" value={firstButton} onClick={handleClick}>{firstButton}</button>
+              <button type="button" className="btn btn-success btn-sm mb-3" value={secondButton} onClick={handleClick}>{secondButton}</button>
+              <button type="button" className="btn btn-success btn-sm mb-3" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
             </div>
           </div>}
         </div>
