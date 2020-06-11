@@ -75,7 +75,7 @@
   height: 400px;
   margin-top: 50px;
   margin-bottom: 50px;
-  background-color: white;
+  background-color: var(--dark-blue);
   margin-bottom: 50px;
   overflow: hidden;
 }
@@ -87,7 +87,7 @@
 }
 
 .about__page-info p {
-  color: rgb(35, 155, 35);
+  color: var(--text-light);
   font-size: 1.1rem;
   line-height: 1.8em;
 }

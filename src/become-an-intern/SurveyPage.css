@@ -95,7 +95,7 @@
 
 .question-container {
   width: 100%;
-  height: 250px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,27 +156,25 @@
   100% {bottom:-5%;}
 }
 
-/* @keyframes converge2 {
-  0%   {bottom: 0;}
-  100% {bottom:5%;}
-} */
-
 @media (max-width: 780px) {
+  .survey-page-container {
+    height: auto;
+  }
   .survey-page-body {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .close-btn {
     position: absolute;
     right: 12vw;
-    top: 52vh;
+    top: 40vh;
   }
   .survey-intro {
     width: 80%;
-    height: 100%;
+    height: auto;
     border-radius: 20px 20px 0 0;
     background-image: url("./images/bg-image.jpg");
     background-size: 100% 100%;
@@ -185,7 +183,7 @@
   .intro-layer {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px 20px 0 0;
     color: white;
     display: flex;

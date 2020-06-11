@@ -84,7 +84,7 @@ return(
       <div className="survey-page-body">
         <div className="survey-intro">
           <div className="intro-layer">
-            <div className="intro-container">
+            <div className="intro-container py-3">
               <div className="img-container">
                 <div>
                   <img alt="vgg-img" src={Image}></img>
@@ -100,7 +100,7 @@ return(
             </div>
           </div>
         </div>
-        <div className="survey-question">
+        <div className="survey-question py-5 px-2">
           {showScore? 
           <div className="result">
             <div>
@@ -113,14 +113,14 @@ return(
           </div>
           : 
           <div className="question-container">
-            <div className="px-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
+            <div className="mb-2 px-2 text-center" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
-            <div className="question">{questionText}</div>
+            <div className="mb-2 question">{questionText}</div>
             <div className="button-container">
-              <button type="button" className="option-btn" value={firstButton} onClick={handleClick}>{firstButton}</button>
-              <button type="button" className="option-btn" value={secondButton} onClick={handleClick}>{secondButton}</button>
-              <button type="button" className="option-btn" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+              <button type="button" className="option-btn mb-2" value={firstButton} onClick={handleClick}>{firstButton}</button>
+              <button type="button" className="option-btn mb-2" value={secondButton} onClick={handleClick}>{secondButton}</button>
+              <button type="button" className="option-btn mb-2" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
             </div>
           </div>}
         </div>
