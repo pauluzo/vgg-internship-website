@@ -86,11 +86,13 @@
 
 .survey-question {
   width: 50%;
-  height: 100%;
+  height: auto;
   border-radius: 0px 20px 20px 0px;
   background-color: white;
   display: flex;
   align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .question-container {
@@ -171,8 +173,8 @@
   }
   .close-btn {
     position: absolute;
-    right: 10vw;
-    top: 38vh;
+    right: 12vw;
+    top: 43vh;
   }
   .survey-intro {
     width: 80%;
