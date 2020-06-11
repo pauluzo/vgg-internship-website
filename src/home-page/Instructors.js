@@ -41,18 +41,8 @@ const Instructors = () => {
             InstructorImage={"https://i.ibb.co/YchQVzG/Ellipse-11.png"}   
         />
   </Carousel.Item>
-</Carousel>
-
-
-
-       
-
-      
-
-       
-
-       
-    </div>
+ </Carousel>   
+</div>
 </div>
     
     )
