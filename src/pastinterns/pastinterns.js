@@ -1,13 +1,16 @@
 import React from 'react'
 import CommunityManager from "../components/communityManager"
 import "./pastinternsstyle.css"
-import FacilitatorItems from "../components/FacilitatorItems"
 import PastInternDetails from './pastinternsdata'
 import PastInternsCard from './pastinternscard'
+import NavBar from "../home-page/Navbar"
+import Footer from "../home-page/Footer"
 
 const PastInterns = () => {
     return(
-        <div>
+        <>
+        <NavBar/>
+        <div style={{paddingTop: "70px"}}>
             <div style={{width: "100%", height: "90vh"}}>
                 <div className="interns-intro">
                     <div className="text-center">
@@ -36,6 +39,8 @@ const PastInterns = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }
 

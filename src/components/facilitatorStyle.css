@@ -21,6 +21,7 @@
     right: 0%;
     animation-name: converge1;
     animation-duration: 3s;
+    padding-top: 20px;
 }
 
 @keyframes converge1 {
