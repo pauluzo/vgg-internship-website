@@ -8,9 +8,8 @@ import Footer from "../home-page/Footer"
 
 const Facilitators = () => {
   return (
-   <>
-    <NavBar/>
-    <div>
+    <>
+      <NavBar/>
       <div style={{ width: '100%', height: '90vh' }}>
         <div className='facilitators-intro'>
           <div>
