@@ -9,7 +9,7 @@
       rgba(0, 0, 0, 0.2)
     ),
     url('../images/osinbajoatvgg.jpg');
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;

@@ -17,7 +17,7 @@ const PastInterns = () => {
             "Success means different things to everyone.
             <br /> For us, success is using technology to transform the world
             around us.
-            <span style={{ color: '#DAA520' }}> IT STARTS WIH YOU</span>"
+            <span style={{ color: '#DAA520' }}> IT STARTS WITH YOU</span>"
           </p>
         </div>
       </div>
