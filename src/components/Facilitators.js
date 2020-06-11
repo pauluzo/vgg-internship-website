@@ -6,19 +6,21 @@ import CommunityManager from "./communityManager"
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
 
-
-
 const Facilitators = () => {
   return (
     <>
       <NavBar/>
-      <div>
-        <div style={{width: "100%", height: "90vh", paddingTop: "70px"}}>
-          <div className="facilitators-intro">
-            <div >
-              <span style={{color: "#DAA520", fontWeight: "bold"}}>Our Facilitators</span>
-              <h1 >"We never know which lives we influence,<br/> when, or why! We <span style={{color: "#DAA520"}}>JUST DO IT</span>"</h1>
-            </div>
+      <div style={{ width: '100%', height: '90vh', paddingTop: "70px"}}>
+        <div className='facilitators-intro'>
+          <div>
+            <span style={{ color: '#DAA520', fontWeight: 'bold' }}>
+              Our Facilitators
+            </span>
+            <h1>
+              "We never know which lives we influence,
+              <br /> when, or why! We{' '}
+              <span style={{ color: '#DAA520' }}>JUST DO IT</span>"
+            </h1>
           </div>
         </div>
         <div>
@@ -42,4 +44,4 @@ const Facilitators = () => {
   );
 };
 
-export default Facilitators;
+export default Facilitators
