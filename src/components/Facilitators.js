@@ -10,8 +10,8 @@ const Facilitators = () => {
   return (
     <>
       <NavBar/>
-      <div style={{ width: '100%', height: '90vh', paddingTop: "70px"}}>
-        <div className='facilitators-intro'>
+      <div style={{ width: '100%', height: '90vh', paddingTop: "70px" }}>
+        <div className='tutor-facilitators-intro'>
           <div>
             <span style={{ color: '#DAA520', fontWeight: 'bold' }}>
               Our Facilitators
@@ -23,13 +23,13 @@ const Facilitators = () => {
             </h1>
           </div>
         </div>
-        <div>
-          <CommunityManager />
-        </div>
-        <div style={{width: "100%", height: "300px"}}>
-          <div className="transforming"></div>
-        </div>
-        <div className="cards-container" style={{backgroundColor: "gainsboro"}}>
+      </div>
+      <div>
+        <CommunityManager />
+      </div>
+      <div className='tutor-cards-container' style={{ backgroundColor: 'gainsboro' }}>
+        <h2>Meet the Team</h2>
+        <div className='tutor-facilitators-container'>
           {facilitatorDetails.map((facilitator) => {
             return (
               <div key={facilitator.id}>
