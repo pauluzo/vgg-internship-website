@@ -81,7 +81,7 @@ return(
   <>
   <NavBar/>
   <div className="survey-page-container" style={{paddingTop: "70px"}} >
-      <div className="survey-page-body py-3">
+      <div className="survey-page-body py-1">
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container p-3">
@@ -113,14 +113,14 @@ return(
           </div>
           : 
           <div className="question-container px-1">
-            <div className="py-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
+            <div className="py-2 text-center" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
             <div className="question py-2">{questionText}</div>
             <div className="button-container py-2">
-              <button type="button" className="option-btn my-1" value={firstButton} onClick={handleClick}>{firstButton}</button>
-              <button type="button" className="option-btn my-1" value={secondButton} onClick={handleClick}>{secondButton}</button>
-              <button type="button" className="option-btn my-1" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+              <button type="button" className="option-btn btn btn-sm my-1" value={firstButton} onClick={handleClick}>{firstButton}</button>
+              <button type="button" className="option-btn btn btn-sm my-1" value={secondButton} onClick={handleClick}>{secondButton}</button>
+              <button type="button" className="option-btn btn btn-sm my-1" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
             </div>
           </div>}
         </div>
