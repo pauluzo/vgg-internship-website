@@ -14,6 +14,7 @@ import { Nav, Navbar} from "react-bootstrap";
       <Navbar.Collapse id="responsive-navbar-nav" style={{zIndex: "1", backgroundColor: "inherit"}}>
         <Nav className="ml-auto pointer">
           <Nav.Link className="text-white text" href="/">Home</Nav.Link>
+          <Nav.Link className="text-white text" href="/registration-form">Register</Nav.Link>
           <Nav.Link className="text-white text" href="/join-the-mission">Join The Mission</Nav.Link>
           <Nav.Link className="text-white text" href="/facilitators">Tutors</Nav.Link>
           <Nav.Link className="text-white text" href="/past-interns">Past Interns</Nav.Link>
