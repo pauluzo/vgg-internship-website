@@ -100,7 +100,7 @@ return(
             </div>
           </div>
         </div>
-        <div className="survey-question py-5 px-3">
+        <div className="survey-question px-3">
           {showScore? 
           <div className="result">
             <div>
@@ -112,7 +112,7 @@ return(
             </div>
           </div>
           : 
-          <div className="question-container px-1">
+          <div className="question-container p-3">
             <div className="py-2 text-center" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
