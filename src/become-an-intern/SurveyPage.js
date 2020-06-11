@@ -100,7 +100,7 @@ return(
             </div>
           </div>
         </div>
-        <div className="survey-question px-2">
+        <div className="survey-question py-5 px-3">
           {showScore? 
           <div className="result">
             <div>
@@ -112,15 +112,15 @@ return(
             </div>
           </div>
           : 
-          <div className="question-container p-3">
-            <div className="py-2 text-center" style={{fontSize: "17px", fontWeight: "bolder"}}>
+          <div className="question-container px-1">
+            <div className="py-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
             <div className="question py-2">{questionText}</div>
             <div className="button-container py-2">
-              <button type="button" className="option-btn my-2" value={firstButton} onClick={handleClick}>{firstButton}</button>
-              <button type="button" className="option-btn my-2" value={secondButton} onClick={handleClick}>{secondButton}</button>
-              <button type="button" className="option-btn my-2" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
+              <button type="button" className="option-btn mb-2" value={firstButton} onClick={handleClick}>{firstButton}</button>
+              <button type="button" className="option-btn mb-2" value={secondButton} onClick={handleClick}>{secondButton}</button>
+              <button type="button" className="option-btn mb-2" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
             </div>
           </div>}
         </div>
