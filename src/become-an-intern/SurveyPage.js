@@ -81,7 +81,7 @@ return(
   <>
   <NavBar/>
   <div className="survey-page-container" style={{paddingTop: "70px"}} >
-      <div className="survey-page-body">
+      <div className="survey-page-body py-2">
         <div className="survey-intro">
           <div className="intro-layer">
             <div className="intro-container p-3">
