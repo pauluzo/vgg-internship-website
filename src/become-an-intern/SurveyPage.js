@@ -4,6 +4,8 @@ import CloseBtn from "./images/close-icon.png"
 import "./SurveyPage.css";
 import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
+import NavBar from "../home-page/Navbar"
+import Footer from "../home-page/Footer"
 
 function SurveyPage(props) {
 const Point = 2
@@ -76,7 +78,9 @@ const goBack = () => {
 }
 
 return(
-  <div className="survey-page-container" >
+  <>
+  <NavBar/>
+  <div className="survey-page-container" style={{paddingTop: "70px"}} >
       <div className="survey-page-body">
         <div className="survey-intro">
           <div className="intro-layer">
@@ -122,6 +126,8 @@ return(
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 
