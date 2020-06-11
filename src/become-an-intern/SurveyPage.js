@@ -112,7 +112,7 @@ return(
             </div>
           </div>
           : 
-          <div className="question-container px-5">
+          <div className="question-container px-1">
             <div className="py-2" style={{fontSize: "17px", fontWeight: "bolder"}}>
               Help us get to know you, pick the option that best describes your interests and personality.
             </div>
