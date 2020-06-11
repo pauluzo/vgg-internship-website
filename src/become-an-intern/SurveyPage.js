@@ -113,10 +113,10 @@ function SurveyPage(props) {
               </div>
               :
               <div className="question-container px-1">
-                <div className="py-2 text-center" style={{ fontSize: "17px", fontWeight: "bolder" }}>
+                <div className="mb-2 text-center" style={{ fontSize: "17px", fontWeight: "bolder" }}>
                   Help us get to know you, pick the option that best describes your interests and personality.
                 </div>
-                <div className="question py-2">{questionText}</div>
+                <div className="question mb-5">{questionText}</div>
                 <button type="button" className="option-btn mb-3" value={firstButton} onClick={handleClick}>{firstButton}</button>
                 <button type="button" className="option-btn mb-3" value={secondButton} onClick={handleClick}>{secondButton}</button>
                 <button type="button" className="option-btn mb-3" value={thirdButton} onClick={handleClick}>{thirdButton}</button>
