@@ -122,7 +122,8 @@
   border-radius: 20px;
   background-color: rgb(12, 12, 94);
   color: white;
-  height: auto;
+  padding: 5px;
+  width: 50%;
 }
 
 .option-btn:hover {
@@ -198,11 +199,5 @@
     background-color: white;
     display: flex;
     align-items: center;
-  }
-  .button-container {
-    width: 300px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
   }
 }
