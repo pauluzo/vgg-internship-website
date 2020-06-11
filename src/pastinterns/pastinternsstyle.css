@@ -35,12 +35,18 @@
 }
 .interns-intro div {
   font-size: 23px;
-  margin-top: 250px;
 }
 
 .interns-intro div p {
   font-family: 'Abril Fatface', cursive;
   font-size: 45px;
+}
+
+.interns-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 5%;
 }
 
 .mario-container img {

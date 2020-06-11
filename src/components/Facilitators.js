@@ -27,6 +27,9 @@ const Facilitators = () => {
       <div>
         <CommunityManager />
       </div>
+      <div style={{width: "100%"}}>
+        <div className="transformingg"></div>
+      </div>
       <div className='tutor-cards-container' style={{ backgroundColor: 'gainsboro' }}>
         <h2>Meet the Team</h2>
         <div className='tutor-facilitators-container'>

@@ -21,6 +21,7 @@ const PastInterns = () => {
           </p>
         </div>
       </div>
+
       <div>
         <CommunityManager />
       </div>
@@ -36,7 +37,7 @@ const PastInterns = () => {
             Our Past Interns
           </h1>
         </div>
-        <div className='cards-container'>
+        <div className='interns-card-container'>
           {PastInternDetails.map((intern) => {
             return (
               <div key={intern.id}>
@@ -52,4 +53,4 @@ const PastInterns = () => {
   );
 };
 
-export default PastInterns
+export default PastInterns;
