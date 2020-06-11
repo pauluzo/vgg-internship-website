@@ -1,9 +1,13 @@
 import React from 'react';
 import './JoinMission.css';
+import NavBar from "../home-page/Navbar"
+import Footer from "../home-page/Footer"
 
 export default function JoinMission() {
   return (
-    <div className='mission'>
+    <>
+    <NavBar/>
+    <div style={{paddingTop: "70px"}} className='mission'>
       <section className='section'>
         <div className='about-mission'>
           <div className='text'>
@@ -115,8 +119,10 @@ export default function JoinMission() {
         <p>
           Sign up today to join this community with a wide range of experienced tutors to take your career in software developement to the next level!
         </p>
-        <a style={{color: "inherit", width: "20%"}} href="/registration-form"><button>Join now</button></a>
+        <a style={{color: "inherit"}} href="/registration-form"><button>Join now</button></a>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 }

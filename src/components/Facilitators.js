@@ -3,9 +3,13 @@ import FacilitatorItems from './FacilitatorItems';
 import facilitatorDetails from './facilitatorsdata';
 import './facilitatorStyle.css';
 import CommunityManager from './communityManager';
+import NavBar from "../home-page/Navbar"
+import Footer from "../home-page/Footer"
 
 const Facilitators = () => {
   return (
+   <>
+    <NavBar/>
     <div>
       <div style={{ width: '100%', height: '90vh' }}>
         <div className='facilitators-intro'>
@@ -36,7 +40,8 @@ const Facilitators = () => {
           })}
         </div>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
 

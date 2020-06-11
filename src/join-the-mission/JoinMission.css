@@ -198,6 +198,10 @@
   width: 50%;
 }
 
+.mission .get-started a {
+  min-width: 200px;
+}
+
 .mission .get-started button {
   border: none;
   outline: none;
@@ -206,7 +210,8 @@
   background-color: #c9d8d2;
   text-align: center;
   cursor: pointer;
-  width: 90%;
+  width: 100%;
+  min-width: 200px;
   font-size: 18px;
   border-radius: 5px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
