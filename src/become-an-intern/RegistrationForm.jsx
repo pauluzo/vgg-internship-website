@@ -52,17 +52,11 @@ export const RegistrationForm = () => {
   return (
     <>
       <NavBar/>
-      <div style={{paddingTop: "70px", display: "flex", justifyContent: "center", alignItems: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('https://pbs.twimg.com/media/DgXB_7pXcAIUP3E.jpg')"}}>
+      <div style={{paddingTop: "70px", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "gainsboro"}}>
         {renderRedirect()}
         <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore}/>
         <Container style={{ margin: "20px"}}>
         <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px",}}>
-          <Card.Img
-            variant="top"
-            src={Image}
-            /*check the background color to change the shade*/
-            style={{ backgroundColor: "#0B2B26", height: "auto", width: "100%"}}
-          />
           <Card.Body>
             <Card.Title style={{ textAlign: "center", fontSize: "35px", fontWeight: "bold", color: "#50b64a" }}>
                 BECOME AN INTERN
@@ -235,7 +229,7 @@ export const RegistrationForm = () => {
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Button type="submit" style={{padding: "5px", width: "100%", fontSize: "23px"}}>Submit</Button>
+          <Button type="submit" className="btn btn-success btn-lg" style={{width: "100%", fontSize: "23px"}}>Submit</Button>
         </Form>
       </Container>
       </div>
