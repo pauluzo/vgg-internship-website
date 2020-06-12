@@ -41,7 +41,7 @@ export class UseForm extends Component {
         gender: '',
       },
       validated: false,
-      redirect: false,
+      loading: false,
     };
   }
 
@@ -87,10 +87,24 @@ export class UseForm extends Component {
         ToastsStore.success(res.data.message);
         this.setState({
           ...this.state,
-          redirect: true,
+          firstName: '',
+          lastName: '',
+          email: '',
+          dob: '',
+          track: '',
+          proficiency: '',
+          city: '',
+          state: '',
+          country: '',
+          gender: '',
+          phoneNumber: '',
+          loading: false,
         });
       })
       .catch((err) => {
+        this.setState({
+          loading: false,
+        });
         const { message } = err.response.data;
         if (typeof message == 'object') {
           message.map((item) => ToastsStore.error(item.msg));
@@ -99,17 +113,26 @@ export class UseForm extends Component {
         }
       });
   };
+
   handleSubmit = (event) => {
+    this.setState({
+      loading: true,
+    });
     event.preventDefault();
 
     if (validateErrors(this.state.errors)) {
-      this.handlePost();
+      this.handlePost(event);
       this.setState({
         validated: true,
-        redirect: true,
       });
     } else {
       console.log('yes');
+    }
+  };
+
+  renderRedirect = (redirect) => {
+    if (redirect) {
+      return <Redirect to='./' />;
     }
   };
 
@@ -148,54 +171,6 @@ export class UseForm extends Component {
     });
   };
 
-  handleErrorsAfterSubmit = (e) => {
-    const { name, value } = e.target;
-    let errors = this.state.errors;
-
-    switch (name) {
-      case 'firstName':
-        errors.firstName = console.log(value);
-        break;
-      case 'lastName':
-        errors.lastName = value === '' ? 'Too short' : '';
-        break;
-      case 'email':
-        errors.email = value === '' ? '' : 'Email is invalid';
-        break;
-      case 'phoneNumber':
-        errors.phoneNumber =
-          value === '' ? 'ahn ahn We want your full number now' : '';
-        break;
-      case 'dob':
-        errors.dob = value === '' ? '' : '';
-        break;
-      case 'track':
-        errors.track = value === '' ? '' : '';
-        break;
-      case 'proficiency':
-        errors.proficiency = value === '' ? '' : '';
-        break;
-      case 'gender':
-        errors.gender = value === '' ? '' : '';
-        break;
-      case 'city':
-        errors.city = value === '' ? '' : '';
-        break;
-      case 'state':
-        errors.state = value === '' ? '' : '';
-        break;
-      case 'country':
-        errors.country = value === '' ? '' : '';
-        break;
-      default:
-        break;
-    }
-    this.setState({
-      errors,
-      [name]: value,
-    });
-  };
-
   render() {
     const {
       firstName,
@@ -210,7 +185,7 @@ export class UseForm extends Component {
       gender,
       phoneNumber,
       errors,
-      redirect,
+      loading,
     } = this.state;
 
     const invalid =
@@ -227,7 +202,6 @@ export class UseForm extends Component {
       state === '';
     return (
       <div className='registration-form'>
-        {renderRedirect(redirect)}
         <ToastsContainer
           position={ToastsContainerPosition.TOP_LEFT}
           store={ToastsStore}
@@ -295,7 +269,9 @@ export class UseForm extends Component {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
 
                 {errors.firstName.length > 0 && (
-                  <div className='invalid-feedback'>{errors.firstName}</div>
+                  <div className='invalid-feedback text-right'>
+                    {errors.firstName}
+                  </div>
                 )}
               </Form.Group>
               <Form.Group as={Col} md='6' controlId='lastNameValidation'>
@@ -336,7 +312,7 @@ export class UseForm extends Component {
                   }`}
                   onChange={this.handleChange}
                 />
-                <Form.Control.Feedback type='invalid'>
+                <Form.Control.Feedback type='invalid' className='text-right'>
                   {errors.email}
                 </Form.Control.Feedback>
               </Form.Group>
@@ -356,7 +332,7 @@ export class UseForm extends Component {
                   value={phoneNumber}
                   onChange={this.handleChange}
                 />
-                <Form.Control.Feedback type='invalid'>
+                <Form.Control.Feedback type='invalid' className='text-right'>
                   {errors.phoneNumber}
                 </Form.Control.Feedback>
               </Form.Group>
@@ -375,7 +351,8 @@ export class UseForm extends Component {
                   value={gender}
                   onChange={this.handleChange}
                 >
-                  <option selected>Female</option>
+                  <option></option>
+                  <option>Female</option>
                   <option>Male</option>
                   <option>Other</option>
                 </Form.Control>
@@ -436,6 +413,7 @@ export class UseForm extends Component {
                   value={proficiency}
                   onChange={this.handleChange}
                 >
+                  <option></option>
                   <option>Beginner</option>
                   <option>Junior</option>
                   <option>Intermediate</option>
@@ -513,9 +491,12 @@ export class UseForm extends Component {
                 fontSize: '23px',
                 pointerEvents: 'painted',
               }}
-              disabled={invalid}
+              disabled={invalid || loading}
+              title='Please fill all fields'
             >
-              Submit
+              {loading && <i className='fa fa-spinner fa-spin mx-2'></i>}
+              {loading && <span>Registering Intern</span>}
+              {!loading && <span>Submit</span>}
             </Button>
           </Form>
         </Container>
@@ -527,12 +508,6 @@ export class UseForm extends Component {
 const validEmailRegex = RegExp(
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 );
-
-const renderRedirect = (redirect) => {
-  if (redirect) {
-    return <Redirect to='./' />;
-  }
-};
 
 const validateErrors = (errors) => {
   let valid = true;

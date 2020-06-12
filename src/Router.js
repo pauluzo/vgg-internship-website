@@ -6,7 +6,6 @@ import SurveyPage from './become-an-intern/SurveyPage';
 import Facilitators from './components/Facilitators';
 import PastInterns from './pastinterns/pastinterns';
 import UseForm from './become-an-intern/UseForm';
-import { RegistrationForm } from './become-an-intern/RegistrationForm';
 
 export class Router extends Component {
   render() {
