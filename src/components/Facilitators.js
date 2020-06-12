@@ -10,7 +10,7 @@ const Facilitators = () => {
   return (
     <>
       <NavBar/>
-      <div>
+      <div className="pt-5">
         <div className='tutor-facilitators-intro'>
           <div>
             <span style={{ color: '#DAA520', fontWeight: 'bold' }}>
