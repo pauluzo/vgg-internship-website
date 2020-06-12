@@ -10,7 +10,7 @@ const PastInterns = () => {
   return (
     <>
     <NavBar/>
-    <div>
+    <div className="pt-5">
       <div className='interns-intro'>
         <div className='text-center'>
           <p>
