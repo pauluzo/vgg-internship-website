@@ -76,7 +76,7 @@
 
 .mario-container {
   display: flex;
-  margin: 100px auto;
+  margin: 20px auto;
   justify-content: space-between;
   align-items: center;
   font-family: 'Lato', sans-serif;

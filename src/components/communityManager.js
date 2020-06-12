@@ -4,9 +4,9 @@ import Mario from '../images/Mario.jpg'
 
 function CommunityManager() {
     return(
-        <div className="mario-container py-5">
+        <div className="mario-container py-1">
           <div className="mario" style={{display: "flex"}}>
-            <div className="px-3">
+            <div className="px-3" style={{marginRight: "auto", marginLeft: "auto"}}>
               <img src={Mario} alt="Mario Micheal" />
             </div>
             <div className=" mario-div px-3">

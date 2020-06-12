@@ -10,7 +10,7 @@ const Facilitators = () => {
   return (
     <>
       <NavBar/>
-      <div style={{ width: '100%', height: '90vh', paddingTop: "70px" }}>
+      <div>
         <div className='tutor-facilitators-intro'>
           <div>
             <span style={{ color: '#DAA520', fontWeight: 'bold' }}>
