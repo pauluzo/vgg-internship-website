@@ -1,14 +1,15 @@
 import React from "react";
 import './LandingPage.css';
-import { Nav, Navbar} from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import Logo from "../become-an-intern/images/intro-img.png";
 
 
 
- const NavBar=() => {
+const NavBar=() => {
   return (
     <Navbar collapseOnSelect variant="dark" expand="lg" className="background" style={{position: "fixed", width: "100%", zIndex: "20", height: "70px"}}>
       <Navbar.Brand href="/">
-      <img  style={{width:"200px", textAlign: "center"}}  src="https://res.cloudinary.com/dev-sam/image/upload/v1590685777/we7l1ttvgs6btbvuilvt.png" alt="logo" />
+      <img  style={{width:"200px", textAlign: "center"}}  src={Logo} alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{color: "white"}}/>
       <Navbar.Collapse id="responsive-navbar-nav" style={{zIndex: "1", backgroundColor: "inherit", paddingLeft: "10px"}}>
