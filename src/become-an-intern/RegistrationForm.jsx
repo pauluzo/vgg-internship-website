@@ -3,7 +3,6 @@ import { Form, Col, Button, Container, Card } from "react-bootstrap";
 import { Redirect, Link } from "react-router-dom";
 import Axios from 'axios'
 import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts'
-import Image from "./images/intro-img.png"
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
 
@@ -37,9 +36,10 @@ export const RegistrationForm = () => {
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setValidated(true);
+      return;
     }
 
-    setValidated(true);
     handlePost();
   }
 
