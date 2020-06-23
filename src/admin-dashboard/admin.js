@@ -3,6 +3,7 @@ import "./admin.css";
 import NavBar from "../home-page/Navbar";
 import Footer from "../home-page/Footer";
 import AdminHomepage from "./admin-homepage";
+import AdminMission from "./admin-mission";
 
 export default function Admin() {
   return(
@@ -19,6 +20,7 @@ export default function Admin() {
           </div>
           <div className="admin-form">
             <AdminHomepage />
+            <AdminMission />
           </div>
         </div>
       </div>
