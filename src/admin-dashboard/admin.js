@@ -4,6 +4,7 @@ import NavBar from "../home-page/Navbar";
 import Footer from "../home-page/Footer";
 import AdminHomepage from "./admin-homepage";
 import AdminMission from "./admin-mission";
+import AdminTutors from "./admin-tutors";
 
 export default function Admin() {
   return(
@@ -15,12 +16,12 @@ export default function Admin() {
             <h1>
               Welcome, Admin.
             </h1>
-            <p>* You can make changes to any section of the form below.</p>
-            <p>* Refresh browser after saving, to see the effects of the changes.</p>
+            <p>You can make changes to any section of the form below.</p>
           </div>
           <div className="admin-form">
             <AdminHomepage />
             <AdminMission />
+            <AdminTutors/>
           </div>
         </div>
       </div>
