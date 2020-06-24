@@ -6,6 +6,8 @@ import AdminHomepage from "./admin-homepage";
 import AdminMission from "./admin-mission";
 import AdminTutors from "./admin-tutors";
 import AdminIntern from "./admin-intern";
+import AdminAbout from "./admin-about";
+import AdminFooter from "./admin-footer";
 
 export default function Admin() {
   return(
@@ -24,6 +26,8 @@ export default function Admin() {
             <AdminMission />
             <AdminTutors/>
             <AdminIntern/>
+            <AdminAbout/>
+            <AdminFooter/>
           </div>
         </div>
       </div>
