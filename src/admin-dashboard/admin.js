@@ -8,6 +8,8 @@ import AdminTutors from "./admin-tutors";
 import AdminIntern from "./admin-intern";
 import AdminAbout from "./admin-about";
 import AdminFooter from "./admin-footer";
+import AdminManager from "./admin-manager";
+import AdminRegistration from "./admin-registration";
 
 export default function Admin() {
   return(
@@ -28,6 +30,8 @@ export default function Admin() {
             <AdminIntern/>
             <AdminAbout/>
             <AdminFooter/>
+            <AdminManager/>
+            <AdminRegistration/>
           </div>
         </div>
       </div>
