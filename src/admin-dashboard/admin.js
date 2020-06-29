@@ -10,6 +10,7 @@ import AdminAbout from "./admin-about";
 import AdminFooter from "./admin-footer";
 import AdminManager from "./admin-manager";
 import AdminRegistration from "./admin-registration";
+import AdminLogin from "./admin-login";
 
 export default function Admin() {
   return(
@@ -22,6 +23,7 @@ export default function Admin() {
               Welcome, Admin.
             </h1>
             <p>You can make changes to any section of the form below.</p>
+            <p>The website will automatically update if the changes are successful</p>
           </div>
           <div className="admin-form">
             <AdminHomepage />
@@ -32,6 +34,7 @@ export default function Admin() {
             <AdminFooter/>
             <AdminManager/>
             <AdminRegistration/>
+            <AdminLogin/>
           </div>
         </div>
       </div>

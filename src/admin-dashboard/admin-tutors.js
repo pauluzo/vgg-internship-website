@@ -220,7 +220,7 @@ const Detail = (props) => {
               rows="2"
               required
               type="text"
-              name="tutorImage"
+              name="githubInfo"
               onChange={handleChange}
               value={`${details[index].githubInfo}`}
             />
