@@ -52,7 +52,7 @@ export default function AdminMission () {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>Mission Header *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="4" controlId="headerTitle">
+                <Form.Group as={Col} md="4" controlId="missionHeaderTitle">
                   <Form.Label>
                     Header Title
                     <span style={{color: "red"}} > *</span>
@@ -68,7 +68,7 @@ export default function AdminMission () {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="headerBody">
+                <Form.Group as={Col} md="4" controlId="missionHeaderBody">
                   <Form.Label>
                     Header Body
                     <span style={{color: "red"}} > *</span>
@@ -83,7 +83,7 @@ export default function AdminMission () {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="headerButton">
+                <Form.Group as={Col} md="4" controlId="missionHeaderButton">
                   <Form.Label>
                     Header Button
                     <span style={{color: "red"}} > *</span>
@@ -189,7 +189,7 @@ export default function AdminMission () {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>Mission Footer *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="footerText">
+                <Form.Group as={Col} md="6" controlId="missionFooterText">
                   <Form.Label>
                     Footer Text
                     <span style={{color: "red"}} > *</span>

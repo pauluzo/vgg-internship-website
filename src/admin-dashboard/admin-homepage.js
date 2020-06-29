@@ -71,7 +71,7 @@ export default function AdminHomepage() {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>Homepage Header *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="4" controlId="headerTitle">
+                <Form.Group as={Col} md="4" controlId="homeHeaderTitle">
                   <Form.Label>
                     Header Title
                     <span style={{color: "red"}} > *</span>
@@ -87,7 +87,7 @@ export default function AdminHomepage() {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="headerBody">
+                <Form.Group as={Col} md="4" controlId="homeHeaderBody">
                   <Form.Label>
                     Header Body
                     <span style={{color: "red"}} > *</span>
@@ -102,7 +102,7 @@ export default function AdminHomepage() {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="headerButton">
+                <Form.Group as={Col} md="4" controlId="homeHeaderButton">
                   <Form.Label>
                     Header Button
                     <span style={{color: "red"}} > *</span>
@@ -448,9 +448,9 @@ const Instructor = (props) => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId={`activityContent${props.index}`}>
+          <Form.Group as={Col} md="4" controlId={`instructorImage${props.index}`}>
             <Form.Label>
-              Instructor Image url
+              Image url
               <span style={{color: "red"}} > *</span>
             </Form.Label>
             <Form.Control

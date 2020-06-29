@@ -52,7 +52,7 @@ export default function AdminTutors () {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>Tutors Header *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="headerTitle">
+                <Form.Group as={Col} md="6" controlId="tutorsHeaderTitle">
                   <Form.Label>
                     Header Title
                     <span style={{color: "red"}} > *</span>
@@ -68,7 +68,7 @@ export default function AdminTutors () {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="6" controlId="headerBody">
+                <Form.Group as={Col} md="6" controlId="tutorsHeaderBody">
                   <Form.Label>
                     Header Body
                     <span style={{color: "red"}} > *</span>
@@ -88,7 +88,7 @@ export default function AdminTutors () {
             <div className="form-row-container">
               <h4>Tutor Details *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="detailsTitle">
+                <Form.Group as={Col} md="6" controlId="tutorDetailsTitle">
                   <Form.Label>
                     Details Title
                     <span style={{color: "red"}} > *</span>

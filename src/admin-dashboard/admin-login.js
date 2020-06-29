@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import "./admin.css";
 
-export default function AdminManager () {
+export default function AdminManager (props) {
   const [data, setData] = useState({});
   const [validated, setValidated] = useState(false);
+
+  // These values should be gotten from redux store
+  const {username, password} = props;
   
 
   const handleSubmit = (event) => {
@@ -14,8 +17,10 @@ export default function AdminManager () {
       event.stopPropagation();
       setValidated(true);
       return;
+    } else if(data['oldPassword'] !== password) {
+      alert("The old password is incorrect");
     } else if(data["rePassword"] !== data['newPassword']) {
-      alert("The new password and re-enered password do not match. Try again.");
+      alert("The new password and re-entered password do not match. Try again.");
     } else {
       console.log(data);
     }
@@ -41,7 +46,7 @@ export default function AdminManager () {
             style={{display: "flex", flexDirection: "column", alignItems: "center"}}
           >
             <div className="form-row-container">
-              <h4 style={{textAlign: "center", marginBottom: "1em"}}>Manager's Details *</h4>
+              <h4 style={{textAlign: "center", marginBottom: "1em"}}>Login Details *</h4>
               <Form.Row>
                 <Form.Group as={Col} md="4" controlId="adminUsername">
                   <Form.Label>

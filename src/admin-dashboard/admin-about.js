@@ -52,7 +52,7 @@ export default function AdminAbout () {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>About Page Header *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="headerTitle">
+                <Form.Group as={Col} md="6" controlId="aboutHeaderTitle">
                   <Form.Label>
                     Header Title
                     <span style={{color: "red"}} > *</span>
@@ -68,7 +68,7 @@ export default function AdminAbout () {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="6" controlId="headerText">
+                <Form.Group as={Col} md="6" controlId="aboutHeaderText">
                   <Form.Label>
                     Header Text
                     <span style={{color: "red"}} > *</span>
@@ -89,7 +89,7 @@ export default function AdminAbout () {
             <div className="form-row-container">
               <h4>About Details *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="4" controlId="detailsTitle">
+                <Form.Group as={Col} md="4" controlId="aboutDetailsTitle">
                   <Form.Label>
                     Details Title
                     <span style={{color: "red"}} > *</span>

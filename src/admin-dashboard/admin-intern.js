@@ -52,7 +52,7 @@ export default function AdminIntern () {
             <div className="form-row-container">
               <h4 style={{textAlign: "center", marginBottom: "1em"}}>Past Interns' Header *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="headerText">
+                <Form.Group as={Col} md="6" controlId="internHeaderText">
                   <Form.Label>
                     Header Text
                     <span style={{color: "red"}} > *</span>
@@ -73,7 +73,7 @@ export default function AdminIntern () {
             <div className="form-row-container">
               <h4>Past Interns' Details *</h4>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="detailsTitle">
+                <Form.Group as={Col} md="6" controlId="internDetailsTitle">
                   <Form.Label>
                     Details Title
                     <span style={{color: "red"}} > *</span>
