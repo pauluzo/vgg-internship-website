@@ -2,16 +2,24 @@ import React, { useState, Fragment } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import CloseBtn from "../become-an-intern/images/close-icon.png";
 import "./admin.css";
+import {connect} from 'react-redux'
+import axios from 'axios'
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function AdminAbout () {
-  const [data, setData] = useState({});
+function AdminAbout (props) {
+  const [data, setData] = useState({
+    detailsImage: props.about.detailsImage,
+    detailsText: props.about.detailsText,
+    detailsTitle: props.about.detailsTitle,
+    headerText: props.about.headerText,
+    headerTitle: props.about.headerTitle
+  });
   const [validated, setValidated] = useState(false);
-  const [benefits, setBenefits] = useState([
-    {benefitTitle: "A", benefitText: "B"},
-    {benefitTitle: "A", benefitText: "B"},
-  ]);
+  const [benefits, setBenefits] = useState(props.about.benefits);
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (event) => {
+    setLoading(true)
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
@@ -22,7 +30,18 @@ export default function AdminAbout () {
       let userData = data;
       userData.benefits = benefits;
       setData({...data, userData});
-      console.log(data);
+      props.pageInformation.about = data;
+      axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
+        .then((res) => {
+          props.updateStore(res.data)
+          ToastsStore.success("changes have been made successfully")
+          setLoading(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          ToastsStore.error("An ERROR occured!")
+          setLoading(false)
+        })
     }
   }
 
@@ -38,6 +57,7 @@ export default function AdminAbout () {
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <div className="admin-homepage">
         <fieldset style={{border: "1px solid white", padding: "20px", borderRadius: "20px"}} >
           <h2>
@@ -64,6 +84,7 @@ export default function AdminAbout () {
                     required
                     type="text"
                     name="headerTitle"
+                    value={data.headerTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -80,6 +101,7 @@ export default function AdminAbout () {
                     required
                     type="text"
                     name="headerText"
+                    value={data.headerText}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -100,6 +122,7 @@ export default function AdminAbout () {
                     required
                     type="text"
                     name="detailsTitle"
+                    value={data.detailsTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -115,6 +138,7 @@ export default function AdminAbout () {
                     required
                     type="text"
                     name="detailsText"
+                    value={data.detailsText}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -130,6 +154,7 @@ export default function AdminAbout () {
                     required
                     type="text"
                     name="detailsImage"
+                    value={data.detailsImage}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -151,7 +176,7 @@ export default function AdminAbout () {
                 </div>
               </Form.Row>
             </div>
-            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}}>Update</Button>
+            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
           </Form>
         </fieldset>
       </div>
@@ -172,7 +197,6 @@ const Benefit = (props) => {
       benefits[index].benefitText = value;
     }
 
-    console.log(benefits);
     setBenefits([...benefits]);
   }
 
@@ -226,3 +250,23 @@ const Benefit = (props) => {
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pageInformation: state,
+    about: state.about
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminAbout)

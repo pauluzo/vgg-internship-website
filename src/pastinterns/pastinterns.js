@@ -1,12 +1,12 @@
 import React from 'react';
 import CommunityManager from '../components/communityManager';
 import './pastinternsstyle.css';
-import PastInternDetails from './pastinternsdata';
 import PastInternsCard from './pastinternscard';
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
+import {connect} from 'react-redux'
 
-const PastInterns = () => {
+const PastInterns = (props) => {
   return (
     <>
     <NavBar/>
@@ -14,10 +14,9 @@ const PastInterns = () => {
       <div className='interns-intro'>
         <div className='text-center'>
           <p>
-            "Success means different things to everyone.
-            <br /> For us, success is using technology to transform the world
-            around us.
-            <span style={{ color: '#DAA520' }}> IT STARTS WITH YOU</span>"
+            {'"'}{props.pastInterns.headerText.slice(0,43)}
+            <br /> {props.pastInterns.headerText.slice(43,props.pastInterns.headerText.length-19)}
+            <span style={{ color: '#DAA520' }}>{props.pastInterns.headerText.slice(props.pastInterns.headerText.length-19,)}</span>{'"'}
           </p>
         </div>
       </div>
@@ -34,13 +33,13 @@ const PastInterns = () => {
             className='pastinterns text-center py-3'
             style={{ color: '#DAA520' }}
           >
-            Our Past Interns
+            {props.pastInterns.detailsTitle}
           </h1>
         </div>
         <div className='interns-card-container'>
-          {PastInternDetails.map((intern) => {
+          {props.pastInterns.details.map((intern, index) => {
             return (
-              <div key={intern.id}>
+              <div key={index}>
                 <PastInternsCard intern={intern} />
               </div>
             );
@@ -53,4 +52,9 @@ const PastInterns = () => {
   );
 };
 
-export default PastInterns;
+const mapStateToProps = (state) => {
+  return {
+    pastInterns: state.pastInterns
+  }
+}
+export default connect(mapStateToProps)(PastInterns);

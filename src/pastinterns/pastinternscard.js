@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const PastInternsCard = ({ intern }) => {
-  const { name, track, image} = intern
+  const { internName, internTrack, internImage} = intern
 
   return (
     <div className="p-5">
@@ -10,18 +10,18 @@ const PastInternsCard = ({ intern }) => {
             <div>
                 <div className="img-div">
                     <img
-                        src={image}
+                        src={internImage}
                         height="130"
                         width="150"
                         className="card-img-top"
-                        alt={name}
+                        alt={internName}
                     />
                 </div>
                 <div className=" text-center facilitators-name p-2" style={{borderBottom: "1px solid #DAA520"}}>
-                    {name}
+                    {internName}
                 </div>
                 <div className="text-center facilitators-track p-2">
-                    {track}
+                    {internTrack}
                 </div>
             </div>
         </div>

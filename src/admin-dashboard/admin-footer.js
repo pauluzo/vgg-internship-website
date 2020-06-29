@@ -2,16 +2,24 @@ import React, { useState, Fragment } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import "./admin.css";
 import CloseBtn from "../become-an-intern/images/close-icon.png";
+import {connect} from 'react-redux'
+import axios from 'axios'
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function AdminFooter () {
-  const [data, setData] = useState({});
+function AdminFooter (props) {
+  const [data, setData] = useState({
+    emailIcon: props.footer.emailIcon,
+    emailText: props.footer.emailText,
+    footerImage: props.footer.footerImage,
+    footerText: props.footer.footerText,
+    footerText2: props.footer.footerText2,
+  });
   const [validated, setValidated] = useState(false);
-  const [icons, setIcons] = useState([
-    {iconLink: "f", mediaSrc: "h"},
-    {iconLink: "r", mediaSrc: "q"}
-  ])
+  const [icons, setIcons] = useState(props.footer.icons)
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (event) => {
+    setLoading(true)
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
@@ -22,7 +30,18 @@ export default function AdminFooter () {
       let userData = data;
       userData.icons = icons;
       setData({...data, userData});
-      console.log(data);
+      props.pageInformation.footer = data;
+      axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
+        .then((res) => {
+          props.updateStore(res.data)
+          ToastsStore.success("changes have been made successfully")
+          setLoading(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          ToastsStore.error("An ERROR occured!")
+          setLoading(false)
+        })
     }
   }
 
@@ -39,6 +58,7 @@ export default function AdminFooter () {
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <div className="admin-homepage">
         <fieldset style={{border: "1px solid white", padding: "20px", borderRadius: "20px"}} >
           <h2>
@@ -65,6 +85,7 @@ export default function AdminFooter () {
                     required
                     type="text"
                     name="footerImage"
+                    value={data.footerImage}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -81,6 +102,7 @@ export default function AdminFooter () {
                     required
                     type="text"
                     name="footerText"
+                    value={data.footerText}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -97,6 +119,7 @@ export default function AdminFooter () {
                     required
                     type="text"
                     name="footerText2"
+                    value={data.footerText2}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -117,6 +140,7 @@ export default function AdminFooter () {
                     required
                     type="text"
                     name="emailIcon"
+                    value={data.emailIcon}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -132,6 +156,7 @@ export default function AdminFooter () {
                     required
                     type="text"
                     name="emailText"
+                    value={data.emailText}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -153,7 +178,7 @@ export default function AdminFooter () {
                 </div>
               </Form.Row>
             </div>
-            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}}>Update</Button>
+            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
           </Form>
         </fieldset>
       </div>
@@ -174,7 +199,6 @@ const Icon = (props) => {
       icons[index].mediaSrc = value;
     }
 
-    console.log(icons);
     setIcons([...icons]);
   }
 
@@ -228,3 +252,22 @@ const Icon = (props) => {
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pageInformation: state,
+    footer: state.footer
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AdminFooter)
