@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const PastInternsCard = ({ intern }) => {
-  const { name, track, image} = intern
+  const { name, track, image, testimony, twitterInfo} = intern;
+  const twitterLink = `https://twitter.com/${twitterInfo}`;
 
   return (
     <div className="p-5">
@@ -23,6 +24,22 @@ const PastInternsCard = ({ intern }) => {
                 <div className="text-center facilitators-track p-2">
                     {track}
                 </div>
+                {
+                    (testimony && twitterInfo) && 
+                    <>
+                        <div className="text-center  p-2" style={{borderTop: "1px solid #DAA520"}}>
+                            <h5 style={{fontWeight: "bold"}}>Testimony</h5>
+                            <p style={{fontSize: "18px"}}>{`"${testimony}"`}</p>
+                        </div>
+                        <div style={{display: "flex", justifyContent: "center"}}>
+                            <button type="button" className="btn btn-circle" style={{backgroundColor: "#DAA520"}}>
+                                <a href={twitterLink} rel="noopener noreferrer" target="_blank">
+                                    <i className="fab fa-twitter"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </>
+                }
             </div>
         </div>
     </div>

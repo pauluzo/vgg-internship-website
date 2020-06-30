@@ -7,8 +7,8 @@ export default function AdminIntern () {
   const [data, setData] = useState({});
   const [validated, setValidated] = useState(false);
   const [details, setDetails] = useState([
-    {internName: "A", internTrack: "B", internImage: "C"},
-    {internName: "A", internTrack: "B", internImage: "C"},
+    {internName: "A", internTrack: "B", internImage: "C", testimony: "D", twitterInfo: "E"},
+    {internName: "A", internTrack: "B", internImage: "C", testimony: "D", twitterInfo: "E"},
   ]);
 
   const handleSubmit = (event) => {
@@ -190,6 +190,38 @@ const Detail = (props) => {
               name="internImage"
               onChange={handleChange}
               value={`${details[index].internImage}`}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group as={Col} md="4" controlId={`internTestimony${props.index}`}>
+            <Form.Label>
+              Intern's Testimony
+              <span style={{color: "red"}} > *</span>
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="2"
+              required
+              type="text"
+              name="testimony"
+              onChange={handleChange}
+              value={`${details[index].testimony}`}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group as={Col} md="4" controlId={`twitterInfo${props.index}`}>
+            <Form.Label>
+              Intern's Twitter Handle
+              <span style={{color: "red"}} > *</span>
+            </Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="2"
+              required
+              type="text"
+              name="twitterInfo"
+              onChange={handleChange}
+              value={`${details[index].twitterInfo}`}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
