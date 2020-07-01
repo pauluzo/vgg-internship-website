@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './JoinMission.css';
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
@@ -22,11 +22,14 @@ const TracksCard = (props) => {
 function JoinMission(props) {
   const mission = props.joinTheMission
   const tracksList = mission.tracks.map((track, index) => (
-  <TracksCard 
-    trackImage={track.trackImage}
-    trackTitle={track.trackTitle}
-    trackContent={track.trackContent}
-  />))
+    <Fragment key={`missionTrackCard${index}`}>
+      <TracksCard 
+        trackImage={track.trackImage}
+        trackTitle={track.trackTitle}
+        trackContent={track.trackContent}
+      />
+    </Fragment>
+    ))
   return (
     <>
     <NavBar/>
