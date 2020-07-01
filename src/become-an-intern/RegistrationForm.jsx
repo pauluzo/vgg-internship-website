@@ -5,8 +5,9 @@ import Axios from 'axios'
 import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts'
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
+import {connect} from 'react-redux'
 
-export const RegistrationForm = () => {
+const RegistrationForm = (props) => {
   const [validated, setValidated] = useState(false);
   const [data, setData] = useState();
   const [redirect, setRedirect] = useState(false)
@@ -17,7 +18,7 @@ export const RegistrationForm = () => {
   };
 
   const handlePost = () => {
-    Axios.post("https://vgg-interns-api.herokuapp.com/api/register", { ...data })
+    Axios.post("https://vgg-internship-db.herokuapp.com/api/register", { ...data })
     .then(res => {
       ToastsStore.success(res.data.message)
       setRedirect(true)
@@ -36,9 +37,10 @@ export const RegistrationForm = () => {
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setValidated(true);
+      return;
     }
 
-    setValidated(true);
     handlePost();
   }
 
@@ -58,10 +60,10 @@ export const RegistrationForm = () => {
         <Card style={{ textAlign: "center", marginBottom: "10px", marginTop: "3px",}}>
           <Card.Body>
             <Card.Title style={{ textAlign: "center", fontSize: "35px", fontWeight: "bold", color: "#50b64a" }}>
-                BECOME AN INTERN
+                {props.registration.formHeader}
               </Card.Title>
               <Card.Text>
-              Not sure what track to choose? Take this<Link to="/take-a-survey"> survey.</Link>
+              <Link to="/take-a-survey" style={{color: "black"}}>{props.registration.formTitle}.</Link>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -228,7 +230,7 @@ export const RegistrationForm = () => {
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Button type="submit" className="btn btn-success btn-lg" style={{width: "100%", fontSize: "23px"}}>Submit</Button>
+          <Button type="submit" className="btn btn-success btn-lg" style={{width: "100%", fontSize: "23px"}}>{props.registration.formButton}</Button>
         </Form>
       </Container>
       </div>
@@ -236,3 +238,10 @@ export const RegistrationForm = () => {
     </>  
   );
 };
+
+const mapStateToProps = (state) => {
+  return {
+    registration: state.registrationForm
+  }
+}
+export default connect(mapStateToProps)(RegistrationForm)

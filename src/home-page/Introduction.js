@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 
-export const Introduction = () => {
+export const Introduction = (props) => {
   return(
     <div className="intro">
       <div className="intro-div">
@@ -63,12 +63,12 @@ export const Introduction = () => {
           <div className="col-lg-6 intro-col1">
             <div className="intro-heading">
               <h1 className="text-center">
-                VGG Virtual Internship
+                {props.headerTitle}
               </h1>
-              <p>The VGG Virtual Internship is a remote internship hosted by
-                Venture Garden Group that seeks to build and upskill talent across Africa
+              <p>
+                {props.headerBody}
               </p>
-              <a href="/registration-form" className="get-started-btn">Get Started</a>
+              <a href="/registration-form" className="get-started-btn">{props.headerButton}</a>
             </div>
           </div>
           <div className="col-lg-6 intro-col1">

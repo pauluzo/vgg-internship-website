@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import { Questions } from './surveyquestions'
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
+import {connect} from 'react-redux'
 
 function SurveyPage(props) {
 const Point = 2
@@ -94,8 +95,8 @@ return(
                 <div onClick={goBack} className="close-btn" style={{cursor: "pointer", marginBottom: "20px", padding: "10px", fontSize: "18px"}}>
                   <img alt="close-btn" src={CloseBtn} style={{width: "30px", height: "30px"}}/>
                 </div>
-                <span className="span-1">Survey</span>
-                <span className="span-2">Questionnaire</span>
+                <span className="span-1">{props.registration.surveyIntro}</span>
+                <span className="span-2">{props.registration.surveyIntro1}</span>
               </div>
             </div>
           </div>
@@ -114,7 +115,7 @@ return(
           : 
           <div className="question-container">
             <div className="mb-2 px-2 text-center" style={{fontSize: "17px", fontWeight: "bolder"}}>
-              Help us get to know you, pick the option that best describes your interests and personality.
+              {props.registration.surveyHeader}
             </div>
             <div className="mb-2 question">{questionText}</div>
             <div className="button-container">
@@ -131,4 +132,9 @@ return(
   );
 }
 
-export default withRouter(SurveyPage);
+const mapStateToProps = (state) => {
+  return {
+    registration: state.registrationForm
+  }
+}
+export default connect(mapStateToProps)(withRouter(SurveyPage));

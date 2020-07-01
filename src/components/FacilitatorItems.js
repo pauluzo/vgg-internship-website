@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FacilitatorItems = ({ facilitator }) => {
-  const { name, track, twitter, github, image} = facilitator;
-  const twitterLink = `https://twitter.com/${twitter}`
-  const githubLink = `https://github.com/${github}`
+  const { tutorName, tutorTrack, twitterInfo, githubInfo, tutorImage} = facilitator;
+  const twitterLink = `https://twitter.com/${twitterInfo}`
+  const githubLink = `https://github.com/${githubInfo}`
     
 
   return (
@@ -13,18 +13,18 @@ const FacilitatorItems = ({ facilitator }) => {
         <div>
         <div className="img-div">
         <img
-          src={require(`../images/${image}`)}
+          src={tutorImage}
           height="130"
           width="150"
           className="card-img-top"
-          alt={name}
+          alt={tutorName}
         />
       </div>
       <div className="facilitators-name p-2" style={{borderBottom: "1px solid #DAA520"}}>
-        {name}
+        {tutorName}
       </div>
       <div className="facilitators-track p-2">
-        {track}
+        {tutorTrack}
       </div>
       <div>
         <ul className="social-media-list list-unstyled list-inline text-center">
