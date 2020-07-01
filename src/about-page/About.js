@@ -3,8 +3,28 @@ import './about.css';
 import scaling from './scaling.png';
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
+import {connect} from 'react-redux'
 
-const About = () => {
+const BenefitsCards = (props) => {
+  return (
+    <div>
+      <div className="content">
+        <h5 className="p-heading">{props.benefitTitle}</h5>
+        <p>
+          {props.benefitText}
+        </p>
+      </div>
+      <hr />
+    </div>
+  )
+}
+const About = (props) => {
+  const benefitsList = props.about.benefits.map((benefit, index) => (
+  <BenefitsCards 
+    key={index} 
+    benefitTitle={benefit.benefitTitle}
+    benefitText={benefit.benefitText}
+  />))
   return (
     <>
     <NavBar/>
@@ -12,10 +32,9 @@ const About = () => {
       <div className="container">
         <div className="about__page-hero">
           <section className="about__page-hero-body">
-            <h3> Our Vision </h3>
+            <h3> {props.about.headerTitle} </h3>
             <h1>
-              Our vision is to make this virtual internship community the largest 
-              and most profitable virtual community for techies in Africa.
+              {props.about.headerText}
             </h1>
           </section>
           <section className="about__page-hero-image"></section>
@@ -23,15 +42,9 @@ const About = () => {
       </div>
       <div className="container about__page-info">
         <div className="about__page-info-left">
-          <h2>Building World-Class Talent</h2>
+          <h2>{props.about.detailsTitle}</h2>
           <p>
-            The aim of this remote internship is to contibute to building
-            the tech ecosystem in Africa by harnessing the wealth of
-            experienced tech staff in VGG to provide tutelage and mentorship
-            to those who aspire to build a career in tech. 
-            This is achieved by enabling the interns with access to seasoned 
-            tutorials from experts in their desired field. It also guarantees that the
-            interns are taught in line with the industry's best practices and standards.
+            {props.about.detailsText}
           </p>
         </div>
         <div className="about__page-info-right"></div>
@@ -45,40 +58,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-md-7">
-              <div className="content">
-                <h5 className="p-heading">Practical learning</h5>
-                <p>
-                  The interns are given tasks and assignments after each week 
-                  of tutelage, to ensure that they get to practice what they are 
-                  taught. They also get feedbacks and detailed reviews from the tutors.
-                </p>
-              </div>
-              <hr />
-              <div className="content">
-                <h5 className="p-heading">Have fun while learning</h5>
-                <p>
-                  Interns get to participate in weekly virtual games which are both
-                  challenging and exciting. Interns represent their tracks to 
-                  make sure they bring the coveted prize home
-                </p>
-              </div>
-              <hr />
-              <div className="content">
-                <h5 className="p-heading">Connect and network</h5>
-                <p>
-                  Interns join an online community that will be available 24/7 to
-                  network with each other and discuss.
-                </p>
-              </div>
-              <hr />
-              <div className="content">
-                <h5 className="p-heading">Get career coaching</h5>
-                <p>
-                  Interns receive career coaching from industry experts in the 
-                  tech field, through virtual coaching sessions organised
-                  by the remote internship team.
-                </p>
-              </div>
+              {benefitsList}
             </div>
           </div>
         </div>
@@ -90,4 +70,10 @@ const About = () => {
   );
 };
 
-export default About;
+const mapStateToProps = (state) => {
+  return {
+    about: state.about
+  }
+}
+
+export default connect(mapStateToProps)(About);

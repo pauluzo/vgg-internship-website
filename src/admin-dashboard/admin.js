@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./admin.css";
 import NavBar from "../home-page/Navbar";
 import Footer from "../home-page/Footer";
@@ -12,12 +12,11 @@ import AdminManager from "./admin-manager";
 import AdminRegistration from "./admin-registration";
 import AdminLogin from "./admin-login";
 import LoginPage from "./login-page";
+import {connect} from 'react-redux'
 
-export default function Admin() {
-  // This boolean should ideally be gotten from redux, to prevent
-  // admin from having to login every time they navigate to another
-  // page and return back to admin page.
-  const [login, setLogin] = useState(false);
+const Admin = (props) => {
+
+  const login = props.isLoggedIn;
 
   return(
     <>
@@ -49,13 +48,16 @@ export default function Admin() {
           </div>
           <Footer />
         </> : 
-        <LoginPage
-          // these values are for testing. Should be replaced by redux store details
-          setLogin={setLogin}
-          username="pauluzo"
-          password="suokafor"
-        />
+        <LoginPage/>
       }
     </>
   );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
 }
+
+export default connect(mapStateToProps)(Admin)

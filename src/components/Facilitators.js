@@ -1,12 +1,12 @@
 import React from "react";
 import FacilitatorItems from "./FacilitatorItems";
-import facilitatorDetails from "./facilitatorsdata";
 import "./facilitatorStyle.css";
 import CommunityManager from "./communityManager"
 import NavBar from "../home-page/Navbar"
 import Footer from "../home-page/Footer"
+import {connect} from 'react-redux'
 
-const Facilitators = () => {
+const Facilitators = (props) => {
   return (
     <>
       <NavBar/>
@@ -14,12 +14,13 @@ const Facilitators = () => {
         <div className='tutor-facilitators-intro'>
           <div>
             <span style={{ color: '#DAA520', fontWeight: 'bold' }}>
-              Our Facilitators
+              {props.tutors.headerTitle}
             </span>
             <h1>
-              "We never know which lives we influence,
-              <br /> when, or why! We{' '}
-              <span style={{ color: '#DAA520' }}>JUST DO IT</span>"
+              {'"'}{props.tutors.headerBody.slice(0,39)}
+              <br />
+              {props.tutors.headerBody.slice(39,props.tutors.headerBody.length-10)}
+              <span style={{ color: '#DAA520' }}>{props.tutors.headerBody.slice(props.tutors.headerBody.length-10,)}</span>{'"'}
             </h1>
           </div>
         </div>
@@ -31,11 +32,11 @@ const Facilitators = () => {
         <div className="transformingg"></div>
       </div>
       <div className='tutor-cards-container' style={{ backgroundColor: 'gainsboro' }}>
-        <h2>Meet the Team</h2>
+        <h2>{props.tutors.detailsTitle}</h2>
         <div className='tutor-facilitators-container'>
-          {facilitatorDetails.map((facilitator) => {
+          {props.tutors.details.map((facilitator, index) => {
             return (
-              <div key={facilitator.id}>
+              <div key={index}>
                 <FacilitatorItems facilitator={facilitator} />
               </div>
             );
@@ -47,4 +48,10 @@ const Facilitators = () => {
   );
 };
 
-export default Facilitators
+const mapStateToProps = (state) => {
+  return {
+    tutors: state.tutors
+  }
+}
+
+export default connect(mapStateToProps)(Facilitators)

@@ -2,43 +2,44 @@ import React from 'react'
 import InstructorDetails from './Utils/InstructorDetails'
 import {Carousel} from 'react-bootstrap';
 
-const Instructors = () => {
+const Instructors = (props) => {
+    const instructors = props.instructors
     return (
         
             <div className="instructors">
-    <h2 className="mb-5 text-center">Our Awesome Instructors</h2>
+    <h2 className="mb-5 text-center">{props.instructorsTitle}</h2>
     <div className="">
 
     <Carousel>
   <Carousel.Item>
         <InstructorDetails
-            InstructorName={'Precious Uchendu'}
-            InstructorTrack={'Frontend Engineer'}
-            InstructorImage={"https://i.ibb.co/8Mk7BHR/Ellipse-9.png"}
+            InstructorName={instructors[0].instructorName}
+            InstructorTrack={instructors[0].instructorTrack}
+            InstructorImage={instructors[0].instructorImage}
             
         />
   </Carousel.Item>
   <Carousel.Item>
         <InstructorDetails
-            InstructorName={'Azeezat R.'}
-            InstructorTrack={'Software Engineer'}
-            InstructorImage={"https://i.ibb.co/DD9j6cd/Ellipse-10.png"}
+            InstructorName={instructors[1].instructorName}
+            InstructorTrack={instructors[1].instructorTrack}
+            InstructorImage={instructors[1].instructorImage}
         />
   </Carousel.Item>
 
   <Carousel.Item>
         <InstructorDetails
-            InstructorName={'Ameen Alade'}
-            InstructorTrack={'UI/UX Designer'}
-            InstructorImage={"https://i.ibb.co/4RL8jTP/Ellipse-8.png"}  
+            InstructorName={instructors[2].instructorName}
+            InstructorTrack={instructors[2].instructorTrack}
+            InstructorImage={instructors[2].instructorImage}
         />
   </Carousel.Item>
 
   <Carousel.Item>
        <InstructorDetails
-            InstructorName={'Chidinma Okafor'}
-            InstructorTrack={'Frontend Engineer'}
-            InstructorImage={"https://i.ibb.co/YchQVzG/Ellipse-11.png"}   
+            InstructorName={instructors[3].instructorName}
+            InstructorTrack={instructors[3].instructorTrack}
+            InstructorImage={instructors[3].instructorImage}
         />
   </Carousel.Item>
  </Carousel>   

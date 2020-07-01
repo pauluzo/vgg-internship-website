@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Form, Col, Button, Container } from "react-bootstrap";
 import "./admin.css";
+import {connect} from 'react-redux'
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function LoginPage (props) {
+const LoginPage = (props) => {
   const [data, setData] = useState({});
   const [validated, setValidated] = useState(false);
-  const setLogin = props.setLogin;
 
-  // These values need to be gotten from the redux store
-  const adminPassword = props.password;
-  const adminUsername = props.username;
+  const adminPassword = props.adminDetails.password;
+  const adminUsername = props.adminDetails.username;
 
   const handleChange = (event) => {
     const {name, value} = event.target;
@@ -24,17 +24,19 @@ export default function LoginPage (props) {
       setValidated(true);
       return;
     } else if(data.username !== adminUsername || data.password !== adminPassword) {
-      alert("The credentials you gave are incorrect. Try again");
+      ToastsStore.error("The credentials you gave are incorrect. Try again")
       return;
     }
     else {
       console.log(data);
-      setLogin(true);
+      let pageInfo = {...props.pageInformation, isLoggedIn: true};
+      props.updateStore(pageInfo);
     }
   }
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <Container fluid style={{height: "100vh"}}>
         <Form
           noValidate
@@ -76,3 +78,23 @@ export default function LoginPage (props) {
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pageInformation: state,
+    adminDetails: state.adminDetails
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

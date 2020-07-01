@@ -1,21 +1,45 @@
 import React, { useState } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import "./admin.css";
+import {connect} from 'react-redux'
+import axios from 'axios'
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function AdminRegistration () {
-  const [data, setData] = useState({});
+function AdminRegistration (props) {
+  const [data, setData] = useState({
+    formButton: props.registrationForm.formButton,
+    formHeader: props.registrationForm.formHeader,
+    formTitle: props.registrationForm.formTitle,
+    surveyHeader: props.registrationForm.surveyHeader,
+    surveyIntro: props.registrationForm.surveyIntro,
+    surveyIntro1: props.registrationForm.surveyIntro1
+  });
   const [validated, setValidated] = useState(false);
+  const [loading, setLoading] = useState(false)
   
 
   const handleSubmit = (event) => {
+    setLoading(true)
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
+      setLoading(false)
       return;
     } else {
-      console.log(data);
+      props.pageInformation.registrationForm = data;
+      axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
+        .then((res) => {
+          props.updateStore(res.data)
+          ToastsStore.success("changes have been made successfully")
+          setLoading(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          ToastsStore.error("An ERROR occured!")
+          setLoading(false)
+        })
     }
   }
 
@@ -27,6 +51,7 @@ export default function AdminRegistration () {
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <div className="admin-homepage">
         <fieldset style={{border: "1px solid white", padding: "20px", borderRadius: "20px"}} >
           <h2>
@@ -53,6 +78,7 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="formHeader"
+                    value={data.formHeader}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -69,6 +95,7 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="formTitle"
+                    value={data.formTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -85,6 +112,7 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="formButton"
+                    value={data.formButton}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -101,6 +129,7 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="surveyIntro1"
+                    value={data.surveyIntro1}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -117,6 +146,7 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="surveyIntro"
+                    value={data.surveyIntro}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -133,16 +163,37 @@ export default function AdminRegistration () {
                     required
                     type="text"
                     name="surveyHeader"
+                    value={data.surveyHeader}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
             </div>
-            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}}>Update</Button>
+            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
           </Form>
         </fieldset>
       </div>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pageInformation: state,
+    registrationForm: state.registrationForm
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminRegistration)

@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import {connect} from 'react-redux'
 
-const Footer = () => {
+const Footer = (props) => {
+  const footerSocials = props.footer.icons.map((icon, index) => (<Fragment key={`uniqueFooter${index}`}>
+    <a href={icon.mediaSrc} ><img src={icon.iconLink} alt={icon.iconLink} border="0" /></a>
+  </Fragment>))
   return (
     <div className="intro-footer">
       <div className="footer-div1">
-        <img className="mb-3" src="https://i.ibb.co/1GWLQdk/logo.png" style={{ width: '186px', maxHeight: '35px' }} alt="logo" />
+        <img className="mb-3" src={props.footer.footerImage} style={{ width: '186px', maxHeight: '35px' }} alt="logo" />
         <p>
-          Venture Garden Group is a holding company for a group of
-          financial technology entities dedicated to the innovative and data-driven financial technology solutions.
+          {props.footer.footerText}
         </p>
-        <p className="font-italic">Transforming Africa Through Technology</p>
+        <p className="font-italic">{props.footer.footerText2}</p>
       </div>
       <hr style={{borderTop: "1px solid white"}} />
       <div className="row footer-media">
         <div className="col-md-8">
-          <img src="https://i.ibb.co/d4QfZTQ/social-mail.png" alt="social-mail" border="0" />
-          <small>  vgg@venturegardengroup.com</small>
+          <img src={props.footer.emailIcon} alt="social-mail" border="0" />
+          <small>  {props.footer.emailText}</small>
         </div>
         <div className="col-md-4">
           <div className="footer-socials">
-            <img src="https://i.ibb.co/vcs3p7x/social-facebook.png" alt="social-facebook" border="0" />
-            <img src="https://i.ibb.co/L13r597/social-instagram.png" alt="social-instagram" border="0" />
-            <img src="https://i.ibb.co/28J5WZs/social-linkedin.png" alt="social-linkedin" border="0" />
+            {footerSocials}
           </div>
         </div>
       </div>
@@ -29,4 +30,9 @@ const Footer = () => {
   );
 }
 
-export default Footer
+const mapStateToProps = (state) => {
+  return {
+    footer: state.footer
+  }
+}
+export default connect(mapStateToProps)(Footer)

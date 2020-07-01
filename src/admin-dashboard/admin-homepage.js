@@ -2,29 +2,33 @@ import React, { useState, Fragment } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import CloseBtn from "../become-an-intern/images/close-icon.png";
 import "./admin.css";
+import {connect} from 'react-redux'
+import axios from 'axios'
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function AdminHomepage() {
-  const [data, setData] = useState({});
+function AdminHomepage(props) {
+  const [data, setData] = useState({
+    headerTitle: props.home.headerTitle,
+    headerBody: props.home.headerBody, 
+    headerButton: props.home.headerButton, 
+    activitiesTitle: props.home.activitiesTitle, 
+    instructorsTitle: props.home.instructorsTitle,
+    tracksTitle: props.home.tracksTitle
+  });
   const [validated, setValidated] = useState(false);
-  const [activities, setActivities] = useState([
-    {activityIcon: "A", activityTitle: "B", activityContent: "C"},
-    {activityIcon: "D", activityTitle: "E", activityContent: "F"}
-  ]);
-  const [tracks, setTracks] = useState([
-    {trackHeader: "A", trackText: "B"},
-    {trackHeader: "C", trackText: "D"}
-  ]);
-  const [instructors, setInstructors] = useState([
-    {instructorName: "K", instructorTrack: "L", instructorImage: "M"},
-    {instructorName: "N", instructorTrack: "O", instructorImage: "P"}
-  ]);
+  const [activities, setActivities] = useState(props.home.activities);
+  const [tracks, setTracks] = useState(props.home.tracks);
+  const [instructors, setInstructors] = useState(props.home.instructors);
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (event) => {
+    setLoading(true)
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
+      setLoading(false)
       return;
     } else {
       let userData = data;
@@ -32,14 +36,27 @@ export default function AdminHomepage() {
       userData.tracks = tracks;
       userData.instructors = instructors;
       setData({...data, userData});
-      console.log(data);
+      props.pageInformation.home = data;
+      axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
+        .then((res) => {
+          props.updateStore(res.data)
+          ToastsStore.success("changes have been made successfully")
+          setLoading(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          ToastsStore.error("An ERROR occured!")
+          setLoading(false)
+        })
     }
   }
 
   const handleChange = (event) => {
     const {name, value} = event.target;
-    const homepageData = {...data, [name]:value};
-    setData(homepageData);
+    setData(data => ({
+      ...data, 
+      [name]: value
+  }))
   }
 
   const addField = (field) => {
@@ -57,6 +74,7 @@ export default function AdminHomepage() {
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <div className="admin-homepage">
         <fieldset style={{border: "1px solid white", padding: "20px", borderRadius: "20px"}} >
           <h2>
@@ -83,6 +101,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="headerTitle"
+                    value={data.headerTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -98,6 +117,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="headerBody"
+                    value={data.headerBody}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -113,6 +133,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="headerButton"
+                    value={data.headerButton}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -133,6 +154,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="activitiesTitle"
+                    value={data.activitiesTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -168,6 +190,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="tracksTitle"
+                    value={data.tracksTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -203,6 +226,7 @@ export default function AdminHomepage() {
                     required
                     type="text"
                     name="instructorsTitle"
+                    value={data.instructorsTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -224,7 +248,7 @@ export default function AdminHomepage() {
                 </div>
               </Form.Row>
             </div>
-            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}}>Update</Button>
+            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
           </Form>
         </fieldset>
       </div>
@@ -245,7 +269,6 @@ const Activity = (props) => {
       activities[index].activityTitle = value;
     } else activities[index].activityContent = value;
 
-    console.log(activities);
     setActivities(activities);
   }
 
@@ -330,7 +353,6 @@ const Track = (props) => {
       tracks[index].trackText = value;
     }
 
-    console.log(tracks);
     setTracks([...tracks]);
   }
 
@@ -398,7 +420,6 @@ const Instructor = (props) => {
       instructors[index].instructorTrack = value;
     } else instructors[index].instructorImage = value;
 
-    console.log(instructors);
     setInstructors(instructors);
   }
 
@@ -469,3 +490,21 @@ const Instructor = (props) => {
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pageInformation: state,
+    home: state.home
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(AdminHomepage)

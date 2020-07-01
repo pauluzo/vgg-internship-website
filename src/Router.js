@@ -5,7 +5,7 @@ import LandingPage from './home-page/LandingPage';
 import JoinMission from './join-the-mission/JoinMission';
 import About from './about-page/About';
 import SurveyPage from './become-an-intern/SurveyPage';
-import { RegistrationForm } from './become-an-intern/RegistrationForm';
+import RegistrationForm from './become-an-intern/RegistrationForm';
 import Facilitators from "./components/Facilitators";
 import PastInterns from "./pastinterns/pastinterns";
 import Admin from "./admin-dashboard/admin";

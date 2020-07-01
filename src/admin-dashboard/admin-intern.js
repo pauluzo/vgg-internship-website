@@ -2,16 +2,22 @@ import React, { useState, Fragment } from "react";
 import { Form, Col, Button } from "react-bootstrap";
 import CloseBtn from "../become-an-intern/images/close-icon.png";
 import "./admin.css";
+import {connect} from 'react-redux'
+import axios from 'axios'
+import ProgressBar from "bootstrap-progress-bar";
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
-export default function AdminIntern () {
-  const [data, setData] = useState({});
+function AdminIntern (props) {
+  const [data, setData] = useState({
+    detailsTitle: props.pastInterns.detailsTitle,
+    headerText: props.pastInterns.headerText,
+  });
   const [validated, setValidated] = useState(false);
-  const [details, setDetails] = useState([
-    {internName: "A", internTrack: "B", internImage: "C", testimony: "D", twitterInfo: "E"},
-    {internName: "A", internTrack: "B", internImage: "C", testimony: "D", twitterInfo: "E"},
-  ]);
+  const [details, setDetails] = useState(props.pastInterns.details);
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (event) => {
+    setLoading(true)
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
@@ -22,7 +28,18 @@ export default function AdminIntern () {
       let userData = data;
       userData.details = details;
       setData({...data, userData});
-      console.log(data);
+      props.pageInformation.pastInterns = data;
+      axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
+        .then((res) => {
+          props.updateStore(res.data)
+          ToastsStore.success("changes have been made successfully")
+          setLoading(false)
+        })
+        .catch((err) => {
+          console.log(err)
+          ToastsStore.error("An ERROR occured!")
+          setLoading(false)
+        })
     }
   }
 
@@ -38,6 +55,7 @@ export default function AdminIntern () {
 
   return (
     <>
+      <ToastsContainer position={ToastsContainerPosition.TOP_LEFT} store={ToastsStore} />
       <div className="admin-homepage">
         <fieldset style={{border: "1px solid white", padding: "20px", borderRadius: "20px"}} >
           <h2>
@@ -64,6 +82,7 @@ export default function AdminIntern () {
                     required
                     type="text"
                     name="headerText"
+                    value={data.headerText}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -84,6 +103,7 @@ export default function AdminIntern () {
                     required
                     type="text"
                     name="detailsTitle"
+                    value={data.detailsTitle}
                     onChange={handleChange}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -105,7 +125,7 @@ export default function AdminIntern () {
                 </div>
               </Form.Row>
             </div>
-            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}}>Update</Button>
+            <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
           </Form>
         </fieldset>
       </div>
@@ -117,6 +137,10 @@ const Detail = (props) => {
   const details = [...props.details];
   const setDetails = props.setDetails;
   const index = props.index;
+  const cloudName = 'mydar'
+  const unsignedUploadPreset = 'fhfkz28c'
+  const [imageUrl, setImageUrl] = useState(details[index].internImage)
+  const [percent, setPercent] = useState(0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -125,10 +149,13 @@ const Detail = (props) => {
     } else if (name === "internTrack") {
       details[index].internTrack = value;
     } else if(name === "internImage") {
-      details[index].internImage = value;
+      details[index].internImage = imageUrl;
+    } else if(name === "testimony") {
+      details[index].testimony = value;
+    } else if(name === "twitterInfo") {
+      details[index].twitterInfo = value;
     }
 
-    console.log(details);
     setDetails([...details]);
   }
 
@@ -136,6 +163,40 @@ const Detail = (props) => {
     details.splice(index, 1);
     setDetails([...details]);
   }
+
+  const uploadFile = (file) => {
+    let url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`
+    let xhr = new XMLHttpRequest()
+    let fd = new FormData()
+    xhr.open('POST', url, true)
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+    xhr.upload.onprogress = (event) => {
+        const { loaded, total } = event;
+  
+        let progress = Math.round((loaded * 100.0) / total);
+        setPercent(progress)
+      }
+    xhr.onreadystatechange = function(e) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          let response = JSON.parse(xhr.responseText)
+          let url = response.secure_url
+          setImageUrl(url)
+          details[index].internImage = url
+          setDetails([...details]);
+        }
+    }
+    fd.append('upload_preset', unsignedUploadPreset)
+    fd.append('file', file);
+    xhr.send(fd);
+
+}
+
+const handleFiles = (event) => {
+    let file = event.target.files[0]
+    uploadFile(file)
+    
+}
+
 
   return (
     <> 
@@ -189,7 +250,7 @@ const Detail = (props) => {
               type="text"
               name="internImage"
               onChange={handleChange}
-              value={`${details[index].internImage}`}
+              value={imageUrl}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
@@ -225,8 +286,34 @@ const Detail = (props) => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
+          <Form.Group as={Col} md="4" controlId={`internImage${props.index}`}>
+          <input name="coverimage" type="file" accept="image/*" onChange={handleFiles} />Upload Image
+            {(percent > 0 && percent < 100) && (
+              <ProgressBar now={percent} active label={`${percent}%`} />
+            )}
+          </Form.Group>
         </Form.Row>
       </div>
     </>
   );
 }
+
+const mapStateToProps= (state) => {
+  return {
+    pageInformation: state,
+    pastInterns: state.pastInterns
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateStore: (content) => {
+      dispatch({
+        type: "UPDATE_STATE",
+        data: content
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdminIntern)
