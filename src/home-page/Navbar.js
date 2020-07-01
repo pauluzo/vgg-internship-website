@@ -1,11 +1,11 @@
 import React from "react";
 import './LandingPage.css';
-import { Nav, Navbar} from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import Logo from "../become-an-intern/images/intro-img.png";
 
 
 
- const NavBar=() => {
+const NavBar=() => {
   return (
     <Navbar collapseOnSelect variant="dark" expand="lg" className="background" style={{position: "fixed", width: "100%", zIndex: "20", height: "70px"}}>
       <Navbar.Brand href="/">
