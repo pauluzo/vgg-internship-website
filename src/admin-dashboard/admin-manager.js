@@ -159,13 +159,11 @@ const handleFiles = (event) => {
                 <Form.Group as={Col} md="4" controlId="instagramInfo">
                   <Form.Label>
                     Instagram Info
-                    <span style={{color: "red"}} > *</span>
                   </Form.Label>
                     
                   <Form.Control
                     as="textarea"
                     rows="2"
-                    required
                     type="text"
                     name="instagramInfo"
                     value={data.instagramInfo}
@@ -176,13 +174,11 @@ const handleFiles = (event) => {
                 <Form.Group as={Col} md="4" controlId="twitterInfo">
                   <Form.Label>
                     Twitter Info
-                    <span style={{color: "red"}} > *</span>
                   </Form.Label>
                     
                   <Form.Control
                     as="textarea"
                     rows="2"
-                    required
                     type="text"
                     name="twitterInfo"
                     value={data.twitterInfo}

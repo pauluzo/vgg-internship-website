@@ -273,12 +273,10 @@ const handleFiles = (event) => {
           <Form.Group as={Col} md="4" controlId={`twitterInfo${props.index}`}>
             <Form.Label>
               Intern's Twitter Handle
-              <span style={{color: "red"}} > *</span>
             </Form.Label>
             <Form.Control
               as="textarea"
               rows="2"
-              required
               type="text"
               name="twitterInfo"
               onChange={handleChange}

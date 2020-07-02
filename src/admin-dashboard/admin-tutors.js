@@ -51,7 +51,7 @@ function AdminTutors (props) {
   }
 
   const addField = () => {
-    details.push({tutorName: "F", tutorTrack: "G", tutorImage: "H", githubInfo: "I", twitterInfo: "J"});
+    details.push({tutorName: "", tutorTrack: "", tutorImage: "", githubInfo: "", twitterInfo: ""});
     setDetails([...details]);
   }
 
@@ -256,7 +256,6 @@ const handleFiles = (event) => {
           <Form.Group as={Col} md="4" controlId={`githubInfo${props.index}`}>
             <Form.Label>
               Github Info
-              <span style={{color: "red"}} > *</span>
             </Form.Label>
             <Form.Control
               as="textarea"
@@ -271,7 +270,6 @@ const handleFiles = (event) => {
           <Form.Group as={Col} md="4" controlId={`twitterInfo${props.index}`}>
             <Form.Label>
               Twitter Info
-              <span style={{color: "red"}} > *</span>
             </Form.Label>
             <Form.Control
               as="textarea"

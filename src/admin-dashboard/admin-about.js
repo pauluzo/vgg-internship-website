@@ -152,7 +152,6 @@ function AdminAbout (props) {
                   <Form.Control
                     as="textarea"
                     rows="2"
-                    required
                     type="text"
                     name="detailsImage"
                     value={data.detailsImage}
