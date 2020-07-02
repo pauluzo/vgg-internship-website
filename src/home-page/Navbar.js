@@ -2,6 +2,7 @@ import React from "react";
 import './LandingPage.css';
 import { Nav, Navbar } from "react-bootstrap";
 import Logo from "../become-an-intern/images/intro-img.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -14,12 +15,12 @@ const NavBar=() => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{color: "white"}}/>
       <Navbar.Collapse id="responsive-navbar-nav" style={{zIndex: "1", backgroundColor: "inherit", paddingLeft: "10px"}}>
         <Nav className="ml-auto pointer">
-          <Nav.Link className="text-white text" href="/">Home</Nav.Link>
-          <Nav.Link className="text-white text" href="/registration-form">Register</Nav.Link>
-          <Nav.Link className="text-white text" href="/join-the-mission">Join The Mission</Nav.Link>
-          <Nav.Link className="text-white text" href="/facilitators">Tutors</Nav.Link>
-          <Nav.Link className="text-white text" href="/past-interns">Past Interns</Nav.Link>
-          <Nav.Link className="text-white text" href="/about">About</Nav.Link>
+          <Link to="/" className="text-white text nav-link">Home</Link>
+          <Link className="text-white text nav-link" to="/registration-form">Register</Link>
+          <Link className="text-white text nav-link" to="/join-the-mission">Join The Mission</Link>
+          <Link className="text-white text nav-link" to="/facilitators">Tutors</Link>
+          <Link className="text-white text nav-link" to="/past-interns">Past Interns</Link>
+          <Link className="text-white text nav-link" to="/about">About</Link>
         </Nav>
       </Navbar.Collapse>
       

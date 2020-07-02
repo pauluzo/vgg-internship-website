@@ -39,7 +39,6 @@ function AdminFooter (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })

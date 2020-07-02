@@ -38,7 +38,6 @@ function AdminTutors (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })
@@ -267,7 +266,7 @@ const handleFiles = (event) => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId={`twitterInfo${props.index}`}>
+          <Form.Group as={Col} md="4" controlId={`tutorTwitterInfo${props.index}`}>
             <Form.Label>
               Twitter Info
             </Form.Label>

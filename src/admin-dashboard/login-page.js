@@ -28,7 +28,6 @@ const LoginPage = (props) => {
       return;
     }
     else {
-      console.log(data);
       let pageInfo = {...props.pageInformation, isLoggedIn: true};
       props.updateStore(pageInfo);
     }
