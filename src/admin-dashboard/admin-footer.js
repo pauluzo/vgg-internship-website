@@ -39,7 +39,6 @@ function AdminFooter (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })
@@ -53,7 +52,7 @@ function AdminFooter (props) {
   }
 
   const addField = () => {
-    icons.push({benefitTitle: "F", benefitText: "G"});
+    icons.push({benefitTitle: "", benefitText: ""});
     setIcons([...icons]);
   }
 

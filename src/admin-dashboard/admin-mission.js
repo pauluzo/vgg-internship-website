@@ -43,7 +43,6 @@ function AdminMission (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })
@@ -56,7 +55,7 @@ function AdminMission (props) {
   }
 
   const addField = () => {
-    tracks.push({trackTitle: "N", trackContent: "O", trackImage: "p"});
+    tracks.push({trackTitle: "", trackContent: "", trackImage: ""});
     setTracks([...tracks]);
   }
 

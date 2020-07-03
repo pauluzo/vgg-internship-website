@@ -36,7 +36,6 @@ function AdminIntern (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })
@@ -49,7 +48,7 @@ function AdminIntern (props) {
   }
 
   const addField = () => {
-    details.push({internName: "F", internTrack: "G", internImage: "H"});
+    details.push({internName: "", internTrack: "", internImage: ""});
     setDetails([...details]);
   }
 
@@ -270,15 +269,13 @@ const handleFiles = (event) => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="4" controlId={`twitterInfo${props.index}`}>
+          <Form.Group as={Col} md="4" controlId={`internTwitterInfo${props.index}`}>
             <Form.Label>
               Intern's Twitter Handle
-              <span style={{color: "red"}} > *</span>
             </Form.Label>
             <Form.Control
               as="textarea"
               rows="2"
-              required
               type="text"
               name="twitterInfo"
               onChange={handleChange}

@@ -39,7 +39,6 @@ function AdminAbout (props) {
           setLoading(false)
         })
         .catch((err) => {
-          console.log(err)
           ToastsStore.error("An ERROR occured!")
           setLoading(false)
         })
@@ -52,7 +51,7 @@ function AdminAbout (props) {
   }
 
   const addField = () => {
-    benefits.push({benefitTitle: "F", benefitText: "G"});
+    benefits.push({benefitTitle: "", benefitText: ""});
     setBenefits([...benefits]);
   }
 
@@ -152,7 +151,6 @@ function AdminAbout (props) {
                   <Form.Control
                     as="textarea"
                     rows="2"
-                    required
                     type="text"
                     name="detailsImage"
                     value={data.detailsImage}

@@ -13,7 +13,6 @@ function App(props) {
     axios.get('https://vgg-internship-db.herokuapp.com/api/content')
     .then(res => {
       props.updateStore(res.data)
-      console.log("this runs");
       setLoading(false)
     })
   },[props])

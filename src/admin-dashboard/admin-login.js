@@ -37,10 +37,8 @@ const AdminLogin = (props) => {
       setLoading(false);
     } else {
       let newPassword = data.newPassword;
-      console.log(newPassword);
       details.password = newPassword;
       setDetails(details);
-      console.log(details);
       props.pageInformation.adminDetails = details;
       axios.put(`https://vgg-internship-db.herokuapp.com/api/content/${props.pageInformation._id}`, { ...props.pageInformation, })
       .then((res) => {
@@ -54,7 +52,6 @@ const AdminLogin = (props) => {
         })
       })
       .catch((err) => {
-        console.log(err)
         ToastsStore.error("An ERROR occured!")
         setLoading(false)
       })
