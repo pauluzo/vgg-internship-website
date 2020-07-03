@@ -52,7 +52,7 @@ function AdminFooter (props) {
   }
 
   const addField = () => {
-    icons.push({benefitTitle: "F", benefitText: "G"});
+    icons.push({benefitTitle: "", benefitText: ""});
     setIcons([...icons]);
   }
 

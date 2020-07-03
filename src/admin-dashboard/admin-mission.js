@@ -55,7 +55,7 @@ function AdminMission (props) {
   }
 
   const addField = () => {
-    tracks.push({trackTitle: "N", trackContent: "O", trackImage: "p"});
+    tracks.push({trackTitle: "", trackContent: "", trackImage: ""});
     setTracks([...tracks]);
   }
 

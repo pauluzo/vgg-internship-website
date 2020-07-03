@@ -51,7 +51,7 @@ function AdminAbout (props) {
   }
 
   const addField = () => {
-    benefits.push({benefitTitle: "F", benefitText: "G"});
+    benefits.push({benefitTitle: "", benefitText: ""});
     setBenefits([...benefits]);
   }
 

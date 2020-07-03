@@ -48,7 +48,7 @@ function AdminIntern (props) {
   }
 
   const addField = () => {
-    details.push({internName: "F", internTrack: "G", internImage: "H"});
+    details.push({internName: "", internTrack: "", internImage: ""});
     setDetails([...details]);
   }
 
