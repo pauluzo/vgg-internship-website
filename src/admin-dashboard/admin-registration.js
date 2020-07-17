@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts'
 
+var FileSaver = require('file-saver');
+
 function AdminRegistration (props) {
   const [data, setData] = useState({
     formButton: props.registrationForm.formButton,
@@ -16,6 +18,7 @@ function AdminRegistration (props) {
   });
   const [validated, setValidated] = useState(false);
   const [loading, setLoading] = useState(false)
+  const [downloading, setDownloading] = useState(false)
   
 
   const handleSubmit = (event) => {
@@ -46,6 +49,25 @@ function AdminRegistration (props) {
   const handleChange = (event) => {
     const {name, value} = event.target;
     setData({...data, [name]: value});
+  }
+
+  const handleDownload = () => {
+    let url = "https://vgg-internship-db.herokuapp.com/api/register";
+    setDownloading(true);
+    axios({
+      method: 'get',
+      url,
+      responseType: 'arraybuffer'
+    })
+    .then(res => {
+      let blob = new Blob([res.data], {type: '"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"'});
+      FileSaver.saveAs(blob, "registrationData.xlsx");
+      setDownloading(false);
+    })
+    .catch(err => {
+      ToastsStore.error(`Error occoured. ${err}`);
+      setDownloading(false);
+    });
   }
 
   return (
@@ -167,6 +189,7 @@ function AdminRegistration (props) {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
+                <Button onClick={handleDownload} className="btn btn-primary" md="4" disabled={downloading}>{downloading ? "Downloading..." : "Download Registration List"}</Button>
               </Form.Row>
             </div>
             <Button type="submit" className="btn btn-success" style={{width: "50%", margin: "20px"}} disabled={loading}>{loading? "Updating..." : "Update"}</Button>
