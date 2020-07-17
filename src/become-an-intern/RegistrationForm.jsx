@@ -11,6 +11,7 @@ const RegistrationForm = (props) => {
   const [validated, setValidated] = useState(false);
   const [data, setData] = useState();
   const [redirect, setRedirect] = useState(false)
+  let titleLength = props.registration.formTitle.length;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +64,10 @@ const RegistrationForm = (props) => {
                 {props.registration.formHeader}
               </Card.Title>
               <Card.Text>
-              <Link to="/take-a-survey" style={{color: "black"}}>{props.registration.formTitle}.</Link>
+              <p>
+                {props.registration.formTitle.substring(0, (titleLength - 16))}
+                <span><Link to="/take-a-survey" style={{color: "blue"}}>{props.registration.formTitle.substring(titleLength - 16) }.</Link></span>
+              </p>
             </Card.Text>
           </Card.Body>
         </Card>
